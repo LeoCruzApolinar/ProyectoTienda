@@ -24,9 +24,9 @@ namespace MesaDePrueba
             //ServicioWebTienda.Usuario miUsuario = new ServicioWebTienda.Usuario();
             ServiceReference2.ServicioASoapClient servicio = new ServiceReference2.ServicioASoapClient();
             ServiceReference2.Usuario miUsuario = new ServiceReference2.Usuario();
-            miUsuario.usuario = "leonardocruzapolinar1";
-            miUsuario.CorreoElectronico = "leonardocruzapolinar1@gmail.com";
-            miUsuario.Clave = "leonardocruzapolinar123";
+            miUsuario.usuario = "leonardocruzapolinar12";
+            miUsuario.CorreoElectronico = "leonardocruzapolinar12@gmail.com";
+            miUsuario.Clave = "123";
             miUsuario.Nombre = "Jose Leonardo";
             miUsuario.Apellido = "Cruz Apolinar";
             miUsuario.Telefono = "829-559-5352";

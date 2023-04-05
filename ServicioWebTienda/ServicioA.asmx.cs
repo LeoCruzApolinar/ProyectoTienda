@@ -955,6 +955,7 @@ namespace ServicioWebTienda
             string x = nombre;
             while (ImagenExiste(nombre))
             {
+                //actual
                 nombre = x + i;
                 i++;
             }

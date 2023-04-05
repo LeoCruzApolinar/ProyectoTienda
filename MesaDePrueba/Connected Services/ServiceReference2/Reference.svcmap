@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="35338e8e-4289-4144-9c8a-39b243784ac9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="f95f5fbe-8222-448d-8ba9-4be828e0d586" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioA.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServicioA.wsdl" MetadataType="Wsdl" ID="0585c993-563d-46bf-8679-367d45e42ed7" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioA.asmx?wsdl" />
-    <MetadataFile FileName="ServicioA.disco" MetadataType="Disco" ID="fa35cdd7-f826-4995-a98a-3c78f117b4ce" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioA.asmx?disco" />
+    <MetadataFile FileName="ServicioA.wsdl" MetadataType="Wsdl" ID="6af51ffc-56e1-4f5c-8c37-d8127aa6f405" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioA.asmx?wsdl" />
+    <MetadataFile FileName="ServicioA.disco" MetadataType="Disco" ID="3dfa7958-b4e8-451b-a460-96fc6d7c2d34" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioA.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

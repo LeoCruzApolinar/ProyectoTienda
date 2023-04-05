@@ -15,7 +15,7 @@ namespace MesaDePrueba.ServiceReference2 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://Intec/")]
     [System.SerializableAttribute()]
     public partial class Usuario : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -200,16 +200,711 @@ namespace MesaDePrueba.ServiceReference2 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Producto", Namespace="http://Intec/")]
+    [System.SerializableAttribute()]
+    public partial class Producto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoriaField;
+        
+        private decimal PrecioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MesaDePrueba.ServiceReference2.Imagenes[] ImágenesField;
+        
+        private int StockField;
+        
+        private double calificacionField;
+        
+        private System.DateTime FechaDeCreacionField;
+        
+        private System.DateTime FechaUltimaModificacionField;
+        
+        private bool EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MarcaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImagenPrincipalField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Categoria {
+            get {
+                return this.CategoriaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoriaField, value) != true)) {
+                    this.CategoriaField = value;
+                    this.RaisePropertyChanged("Categoria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal Precio {
+            get {
+                return this.PrecioField;
+            }
+            set {
+                if ((this.PrecioField.Equals(value) != true)) {
+                    this.PrecioField = value;
+                    this.RaisePropertyChanged("Precio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public MesaDePrueba.ServiceReference2.Imagenes[] Imágenes {
+            get {
+                return this.ImágenesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImágenesField, value) != true)) {
+                    this.ImágenesField = value;
+                    this.RaisePropertyChanged("Imágenes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((this.StockField.Equals(value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public double calificacion {
+            get {
+                return this.calificacionField;
+            }
+            set {
+                if ((this.calificacionField.Equals(value) != true)) {
+                    this.calificacionField = value;
+                    this.RaisePropertyChanged("calificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public System.DateTime FechaDeCreacion {
+            get {
+                return this.FechaDeCreacionField;
+            }
+            set {
+                if ((this.FechaDeCreacionField.Equals(value) != true)) {
+                    this.FechaDeCreacionField = value;
+                    this.RaisePropertyChanged("FechaDeCreacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public System.DateTime FechaUltimaModificacion {
+            get {
+                return this.FechaUltimaModificacionField;
+            }
+            set {
+                if ((this.FechaUltimaModificacionField.Equals(value) != true)) {
+                    this.FechaUltimaModificacionField = value;
+                    this.RaisePropertyChanged("FechaUltimaModificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public bool Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((this.EstadoField.Equals(value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string Marca {
+            get {
+                return this.MarcaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarcaField, value) != true)) {
+                    this.MarcaField = value;
+                    this.RaisePropertyChanged("Marca");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string ImagenPrincipal {
+            get {
+                return this.ImagenPrincipalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImagenPrincipalField, value) != true)) {
+                    this.ImagenPrincipalField = value;
+                    this.RaisePropertyChanged("ImagenPrincipal");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Imagenes", Namespace="http://Intec/")]
+    [System.SerializableAttribute()]
+    public partial class Imagenes : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string URLField;
+        
+        private System.DateTime FechaDeAsignacionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string URL {
+            get {
+                return this.URLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.URLField, value) != true)) {
+                    this.URLField = value;
+                    this.RaisePropertyChanged("URL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.DateTime FechaDeAsignacion {
+            get {
+                return this.FechaDeAsignacionField;
+            }
+            set {
+                if ((this.FechaDeAsignacionField.Equals(value) != true)) {
+                    this.FechaDeAsignacionField = value;
+                    this.RaisePropertyChanged("FechaDeAsignacion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Marca", Namespace="http://Intec/")]
+    [System.SerializableAttribute()]
+    public partial class Marca : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LogoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Logo {
+            get {
+                return this.LogoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LogoField, value) != true)) {
+                    this.LogoField = value;
+                    this.RaisePropertyChanged("Logo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Categoria", Namespace="http://Intec/")]
+    [System.SerializableAttribute()]
+    public partial class Categoria : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.ServicioASoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://Intec/", ConfigurationName="ServiceReference2.ServicioASoap")]
     public interface ServicioASoap {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento user del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IngresarUsuario", ReplyAction="*")]
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento email del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/EliminarUsuarioFirebase", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponse EliminarUsuarioFirebase(MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/EliminarUsuarioFirebase", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponse> EliminarUsuarioFirebaseAsync(MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento email del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/IniciarSesionFirebase", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponse IniciarSesionFirebase(MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/IniciarSesionFirebase", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponse> IniciarSesionFirebaseAsync(MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento user del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/IngresarUsuario", ReplyAction="*")]
         MesaDePrueba.ServiceReference2.IngresarUsuarioResponse IngresarUsuario(MesaDePrueba.ServiceReference2.IngresarUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IngresarUsuario", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/IngresarUsuario", ReplyAction="*")]
         System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.IngresarUsuarioResponse> IngresarUsuarioAsync(MesaDePrueba.ServiceReference2.IngresarUsuarioRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Usuario del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ObtenerUsuario", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.ObtenerUsuarioResponse ObtenerUsuario(MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ObtenerUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ObtenerUsuarioResponse> ObtenerUsuarioAsync(MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento user del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ActualizarUsuario", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.ActualizarUsuarioResponse ActualizarUsuario(MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ActualizarUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ActualizarUsuarioResponse> ActualizarUsuarioAsync(MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento producto del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/CrearProducto", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.CrearProductoResponse CrearProducto(MesaDePrueba.ServiceReference2.CrearProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/CrearProducto", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.CrearProductoResponse> CrearProductoAsync(MesaDePrueba.ServiceReference2.CrearProductoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ComandoProductosResult del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ComandoProductos", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.ComandoProductosResponse ComandoProductos(MesaDePrueba.ServiceReference2.ComandoProductosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ComandoProductos", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ComandoProductosResponse> ComandoProductosAsync(MesaDePrueba.ServiceReference2.ComandoProductosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento producto del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ActualizarProducto", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.ActualizarProductoResponse ActualizarProducto(MesaDePrueba.ServiceReference2.ActualizarProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ActualizarProducto", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ActualizarProductoResponse> ActualizarProductoAsync(MesaDePrueba.ServiceReference2.ActualizarProductoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento marca del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/AgregarMarca", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.AgregarMarcaResponse AgregarMarca(MesaDePrueba.ServiceReference2.AgregarMarcaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/AgregarMarca", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.AgregarMarcaResponse> AgregarMarcaAsync(MesaDePrueba.ServiceReference2.AgregarMarcaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ObtenerMarcaResult del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ObtenerMarca", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.ObtenerMarcaResponse ObtenerMarca(MesaDePrueba.ServiceReference2.ObtenerMarcaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/ObtenerMarca", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ObtenerMarcaResponse> ObtenerMarcaAsync(MesaDePrueba.ServiceReference2.ObtenerMarcaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento categoria del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/AgregarCategoria", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.AgregarCategoriaResponse AgregarCategoria(MesaDePrueba.ServiceReference2.AgregarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/AgregarCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.AgregarCategoriaResponse> AgregarCategoriaAsync(MesaDePrueba.ServiceReference2.AgregarCategoriaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento archivoB del espacio de nombres http://Intec/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/SubirImagen", ReplyAction="*")]
+        MesaDePrueba.ServiceReference2.SubirImagenResponse SubirImagen(MesaDePrueba.ServiceReference2.SubirImagenRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Intec/SubirImagen", ReplyAction="*")]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.SubirImagenResponse> SubirImagenAsync(MesaDePrueba.ServiceReference2.SubirImagenRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EliminarUsuarioFirebaseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EliminarUsuarioFirebase", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequestBody Body;
+        
+        public EliminarUsuarioFirebaseRequest() {
+        }
+        
+        public EliminarUsuarioFirebaseRequest(MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class EliminarUsuarioFirebaseRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contrasena;
+        
+        public EliminarUsuarioFirebaseRequestBody() {
+        }
+        
+        public EliminarUsuarioFirebaseRequestBody(string email, string contrasena) {
+            this.email = email;
+            this.contrasena = contrasena;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EliminarUsuarioFirebaseResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EliminarUsuarioFirebaseResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponseBody Body;
+        
+        public EliminarUsuarioFirebaseResponse() {
+        }
+        
+        public EliminarUsuarioFirebaseResponse(MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class EliminarUsuarioFirebaseResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool EliminarUsuarioFirebaseResult;
+        
+        public EliminarUsuarioFirebaseResponseBody() {
+        }
+        
+        public EliminarUsuarioFirebaseResponseBody(bool EliminarUsuarioFirebaseResult) {
+            this.EliminarUsuarioFirebaseResult = EliminarUsuarioFirebaseResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IniciarSesionFirebaseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IniciarSesionFirebase", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequestBody Body;
+        
+        public IniciarSesionFirebaseRequest() {
+        }
+        
+        public IniciarSesionFirebaseRequest(MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class IniciarSesionFirebaseRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contrasena;
+        
+        public IniciarSesionFirebaseRequestBody() {
+        }
+        
+        public IniciarSesionFirebaseRequestBody(string email, string contrasena) {
+            this.email = email;
+            this.contrasena = contrasena;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IniciarSesionFirebaseResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IniciarSesionFirebaseResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponseBody Body;
+        
+        public IniciarSesionFirebaseResponse() {
+        }
+        
+        public IniciarSesionFirebaseResponse(MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class IniciarSesionFirebaseResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string IniciarSesionFirebaseResult;
+        
+        public IniciarSesionFirebaseResponseBody() {
+        }
+        
+        public IniciarSesionFirebaseResponseBody(string IniciarSesionFirebaseResult) {
+            this.IniciarSesionFirebaseResult = IniciarSesionFirebaseResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -218,7 +913,7 @@ namespace MesaDePrueba.ServiceReference2 {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class IngresarUsuarioRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="IngresarUsuario", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IngresarUsuario", Namespace="http://Intec/", Order=0)]
         public MesaDePrueba.ServiceReference2.IngresarUsuarioRequestBody Body;
         
         public IngresarUsuarioRequest() {
@@ -232,7 +927,7 @@ namespace MesaDePrueba.ServiceReference2 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
     public partial class IngresarUsuarioRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -252,7 +947,7 @@ namespace MesaDePrueba.ServiceReference2 {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class IngresarUsuarioResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="IngresarUsuarioResponse", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IngresarUsuarioResponse", Namespace="http://Intec/", Order=0)]
         public MesaDePrueba.ServiceReference2.IngresarUsuarioResponseBody Body;
         
         public IngresarUsuarioResponse() {
@@ -266,17 +961,638 @@ namespace MesaDePrueba.ServiceReference2 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
     public partial class IngresarUsuarioResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string IngresarUsuarioResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool IngresarUsuarioResult;
         
         public IngresarUsuarioResponseBody() {
         }
         
-        public IngresarUsuarioResponseBody(string IngresarUsuarioResult) {
+        public IngresarUsuarioResponseBody(bool IngresarUsuarioResult) {
             this.IngresarUsuarioResult = IngresarUsuarioResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerUsuario", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ObtenerUsuarioRequestBody Body;
+        
+        public ObtenerUsuarioRequest() {
+        }
+        
+        public ObtenerUsuarioRequest(MesaDePrueba.ServiceReference2.ObtenerUsuarioRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ObtenerUsuarioRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Usuario;
+        
+        public ObtenerUsuarioRequestBody() {
+        }
+        
+        public ObtenerUsuarioRequestBody(string Usuario) {
+            this.Usuario = Usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerUsuarioResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ObtenerUsuarioResponseBody Body;
+        
+        public ObtenerUsuarioResponse() {
+        }
+        
+        public ObtenerUsuarioResponse(MesaDePrueba.ServiceReference2.ObtenerUsuarioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ObtenerUsuarioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ObtenerUsuarioResult;
+        
+        public ObtenerUsuarioResponseBody() {
+        }
+        
+        public ObtenerUsuarioResponseBody(string ObtenerUsuarioResult) {
+            this.ObtenerUsuarioResult = ObtenerUsuarioResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ActualizarUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ActualizarUsuario", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ActualizarUsuarioRequestBody Body;
+        
+        public ActualizarUsuarioRequest() {
+        }
+        
+        public ActualizarUsuarioRequest(MesaDePrueba.ServiceReference2.ActualizarUsuarioRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ActualizarUsuarioRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MesaDePrueba.ServiceReference2.Usuario user;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string CorreoAnterior;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string UsuaioAnterior;
+        
+        public ActualizarUsuarioRequestBody() {
+        }
+        
+        public ActualizarUsuarioRequestBody(MesaDePrueba.ServiceReference2.Usuario user, string CorreoAnterior, string UsuaioAnterior) {
+            this.user = user;
+            this.CorreoAnterior = CorreoAnterior;
+            this.UsuaioAnterior = UsuaioAnterior;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ActualizarUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ActualizarUsuarioResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ActualizarUsuarioResponseBody Body;
+        
+        public ActualizarUsuarioResponse() {
+        }
+        
+        public ActualizarUsuarioResponse(MesaDePrueba.ServiceReference2.ActualizarUsuarioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ActualizarUsuarioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ActualizarUsuarioResult;
+        
+        public ActualizarUsuarioResponseBody() {
+        }
+        
+        public ActualizarUsuarioResponseBody(bool ActualizarUsuarioResult) {
+            this.ActualizarUsuarioResult = ActualizarUsuarioResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CrearProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CrearProducto", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.CrearProductoRequestBody Body;
+        
+        public CrearProductoRequest() {
+        }
+        
+        public CrearProductoRequest(MesaDePrueba.ServiceReference2.CrearProductoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class CrearProductoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MesaDePrueba.ServiceReference2.Producto producto;
+        
+        public CrearProductoRequestBody() {
+        }
+        
+        public CrearProductoRequestBody(MesaDePrueba.ServiceReference2.Producto producto) {
+            this.producto = producto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CrearProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CrearProductoResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.CrearProductoResponseBody Body;
+        
+        public CrearProductoResponse() {
+        }
+        
+        public CrearProductoResponse(MesaDePrueba.ServiceReference2.CrearProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class CrearProductoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool CrearProductoResult;
+        
+        public CrearProductoResponseBody() {
+        }
+        
+        public CrearProductoResponseBody(bool CrearProductoResult) {
+            this.CrearProductoResult = CrearProductoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ComandoProductosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ComandoProductos", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ComandoProductosRequestBody Body;
+        
+        public ComandoProductosRequest() {
+        }
+        
+        public ComandoProductosRequest(MesaDePrueba.ServiceReference2.ComandoProductosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ComandoProductosRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int Orden;
+        
+        public ComandoProductosRequestBody() {
+        }
+        
+        public ComandoProductosRequestBody(int Orden) {
+            this.Orden = Orden;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ComandoProductosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ComandoProductosResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ComandoProductosResponseBody Body;
+        
+        public ComandoProductosResponse() {
+        }
+        
+        public ComandoProductosResponse(MesaDePrueba.ServiceReference2.ComandoProductosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ComandoProductosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ComandoProductosResult;
+        
+        public ComandoProductosResponseBody() {
+        }
+        
+        public ComandoProductosResponseBody(string ComandoProductosResult) {
+            this.ComandoProductosResult = ComandoProductosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ActualizarProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ActualizarProducto", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ActualizarProductoRequestBody Body;
+        
+        public ActualizarProductoRequest() {
+        }
+        
+        public ActualizarProductoRequest(MesaDePrueba.ServiceReference2.ActualizarProductoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ActualizarProductoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MesaDePrueba.ServiceReference2.Producto producto;
+        
+        public ActualizarProductoRequestBody() {
+        }
+        
+        public ActualizarProductoRequestBody(MesaDePrueba.ServiceReference2.Producto producto) {
+            this.producto = producto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ActualizarProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ActualizarProductoResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ActualizarProductoResponseBody Body;
+        
+        public ActualizarProductoResponse() {
+        }
+        
+        public ActualizarProductoResponse(MesaDePrueba.ServiceReference2.ActualizarProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ActualizarProductoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ActualizarProductoResult;
+        
+        public ActualizarProductoResponseBody() {
+        }
+        
+        public ActualizarProductoResponseBody(bool ActualizarProductoResult) {
+            this.ActualizarProductoResult = ActualizarProductoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarMarcaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarMarca", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.AgregarMarcaRequestBody Body;
+        
+        public AgregarMarcaRequest() {
+        }
+        
+        public AgregarMarcaRequest(MesaDePrueba.ServiceReference2.AgregarMarcaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class AgregarMarcaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MesaDePrueba.ServiceReference2.Marca marca;
+        
+        public AgregarMarcaRequestBody() {
+        }
+        
+        public AgregarMarcaRequestBody(MesaDePrueba.ServiceReference2.Marca marca) {
+            this.marca = marca;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarMarcaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarMarcaResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.AgregarMarcaResponseBody Body;
+        
+        public AgregarMarcaResponse() {
+        }
+        
+        public AgregarMarcaResponse(MesaDePrueba.ServiceReference2.AgregarMarcaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class AgregarMarcaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AgregarMarcaResult;
+        
+        public AgregarMarcaResponseBody() {
+        }
+        
+        public AgregarMarcaResponseBody(bool AgregarMarcaResult) {
+            this.AgregarMarcaResult = AgregarMarcaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerMarcaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerMarca", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ObtenerMarcaRequestBody Body;
+        
+        public ObtenerMarcaRequest() {
+        }
+        
+        public ObtenerMarcaRequest(MesaDePrueba.ServiceReference2.ObtenerMarcaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class ObtenerMarcaRequestBody {
+        
+        public ObtenerMarcaRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerMarcaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerMarcaResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.ObtenerMarcaResponseBody Body;
+        
+        public ObtenerMarcaResponse() {
+        }
+        
+        public ObtenerMarcaResponse(MesaDePrueba.ServiceReference2.ObtenerMarcaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class ObtenerMarcaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ObtenerMarcaResult;
+        
+        public ObtenerMarcaResponseBody() {
+        }
+        
+        public ObtenerMarcaResponseBody(string ObtenerMarcaResult) {
+            this.ObtenerMarcaResult = ObtenerMarcaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarCategoria", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.AgregarCategoriaRequestBody Body;
+        
+        public AgregarCategoriaRequest() {
+        }
+        
+        public AgregarCategoriaRequest(MesaDePrueba.ServiceReference2.AgregarCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class AgregarCategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MesaDePrueba.ServiceReference2.Categoria categoria;
+        
+        public AgregarCategoriaRequestBody() {
+        }
+        
+        public AgregarCategoriaRequestBody(MesaDePrueba.ServiceReference2.Categoria categoria) {
+            this.categoria = categoria;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarCategoriaResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.AgregarCategoriaResponseBody Body;
+        
+        public AgregarCategoriaResponse() {
+        }
+        
+        public AgregarCategoriaResponse(MesaDePrueba.ServiceReference2.AgregarCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class AgregarCategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AgregarCategoriaResult;
+        
+        public AgregarCategoriaResponseBody() {
+        }
+        
+        public AgregarCategoriaResponseBody(bool AgregarCategoriaResult) {
+            this.AgregarCategoriaResult = AgregarCategoriaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SubirImagenRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubirImagen", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.SubirImagenRequestBody Body;
+        
+        public SubirImagenRequest() {
+        }
+        
+        public SubirImagenRequest(MesaDePrueba.ServiceReference2.SubirImagenRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class SubirImagenRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int orden;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public byte[] archivoB;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string nombre;
+        
+        public SubirImagenRequestBody() {
+        }
+        
+        public SubirImagenRequestBody(int orden, byte[] archivoB, string nombre) {
+            this.orden = orden;
+            this.archivoB = archivoB;
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SubirImagenResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SubirImagenResponse", Namespace="http://Intec/", Order=0)]
+        public MesaDePrueba.ServiceReference2.SubirImagenResponseBody Body;
+        
+        public SubirImagenResponse() {
+        }
+        
+        public SubirImagenResponse(MesaDePrueba.ServiceReference2.SubirImagenResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://Intec/")]
+    public partial class SubirImagenResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SubirImagenResult;
+        
+        public SubirImagenResponseBody() {
+        }
+        
+        public SubirImagenResponseBody(string SubirImagenResult) {
+            this.SubirImagenResult = SubirImagenResult;
         }
     }
     
@@ -308,11 +1624,65 @@ namespace MesaDePrueba.ServiceReference2 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponse MesaDePrueba.ServiceReference2.ServicioASoap.EliminarUsuarioFirebase(MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest request) {
+            return base.Channel.EliminarUsuarioFirebase(request);
+        }
+        
+        public bool EliminarUsuarioFirebase(string email, string contrasena) {
+            MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest inValue = new MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequestBody();
+            inValue.Body.email = email;
+            inValue.Body.contrasena = contrasena;
+            MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).EliminarUsuarioFirebase(inValue);
+            return retVal.Body.EliminarUsuarioFirebaseResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponse> MesaDePrueba.ServiceReference2.ServicioASoap.EliminarUsuarioFirebaseAsync(MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest request) {
+            return base.Channel.EliminarUsuarioFirebaseAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponse> EliminarUsuarioFirebaseAsync(string email, string contrasena) {
+            MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest inValue = new MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseRequestBody();
+            inValue.Body.email = email;
+            inValue.Body.contrasena = contrasena;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).EliminarUsuarioFirebaseAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponse MesaDePrueba.ServiceReference2.ServicioASoap.IniciarSesionFirebase(MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest request) {
+            return base.Channel.IniciarSesionFirebase(request);
+        }
+        
+        public string IniciarSesionFirebase(string email, string contrasena) {
+            MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest inValue = new MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequestBody();
+            inValue.Body.email = email;
+            inValue.Body.contrasena = contrasena;
+            MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).IniciarSesionFirebase(inValue);
+            return retVal.Body.IniciarSesionFirebaseResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponse> MesaDePrueba.ServiceReference2.ServicioASoap.IniciarSesionFirebaseAsync(MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest request) {
+            return base.Channel.IniciarSesionFirebaseAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponse> IniciarSesionFirebaseAsync(string email, string contrasena) {
+            MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest inValue = new MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.IniciarSesionFirebaseRequestBody();
+            inValue.Body.email = email;
+            inValue.Body.contrasena = contrasena;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).IniciarSesionFirebaseAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         MesaDePrueba.ServiceReference2.IngresarUsuarioResponse MesaDePrueba.ServiceReference2.ServicioASoap.IngresarUsuario(MesaDePrueba.ServiceReference2.IngresarUsuarioRequest request) {
             return base.Channel.IngresarUsuario(request);
         }
         
-        public string IngresarUsuario(MesaDePrueba.ServiceReference2.Usuario user) {
+        public bool IngresarUsuario(MesaDePrueba.ServiceReference2.Usuario user) {
             MesaDePrueba.ServiceReference2.IngresarUsuarioRequest inValue = new MesaDePrueba.ServiceReference2.IngresarUsuarioRequest();
             inValue.Body = new MesaDePrueba.ServiceReference2.IngresarUsuarioRequestBody();
             inValue.Body.user = user;
@@ -330,6 +1700,237 @@ namespace MesaDePrueba.ServiceReference2 {
             inValue.Body = new MesaDePrueba.ServiceReference2.IngresarUsuarioRequestBody();
             inValue.Body.user = user;
             return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).IngresarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.ObtenerUsuarioResponse MesaDePrueba.ServiceReference2.ServicioASoap.ObtenerUsuario(MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest request) {
+            return base.Channel.ObtenerUsuario(request);
+        }
+        
+        public string ObtenerUsuario(string Usuario) {
+            MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest inValue = new MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ObtenerUsuarioRequestBody();
+            inValue.Body.Usuario = Usuario;
+            MesaDePrueba.ServiceReference2.ObtenerUsuarioResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ObtenerUsuario(inValue);
+            return retVal.Body.ObtenerUsuarioResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ObtenerUsuarioResponse> MesaDePrueba.ServiceReference2.ServicioASoap.ObtenerUsuarioAsync(MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest request) {
+            return base.Channel.ObtenerUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ObtenerUsuarioResponse> ObtenerUsuarioAsync(string Usuario) {
+            MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest inValue = new MesaDePrueba.ServiceReference2.ObtenerUsuarioRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ObtenerUsuarioRequestBody();
+            inValue.Body.Usuario = Usuario;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ObtenerUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.ActualizarUsuarioResponse MesaDePrueba.ServiceReference2.ServicioASoap.ActualizarUsuario(MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest request) {
+            return base.Channel.ActualizarUsuario(request);
+        }
+        
+        public bool ActualizarUsuario(MesaDePrueba.ServiceReference2.Usuario user, string CorreoAnterior, string UsuaioAnterior) {
+            MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest inValue = new MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ActualizarUsuarioRequestBody();
+            inValue.Body.user = user;
+            inValue.Body.CorreoAnterior = CorreoAnterior;
+            inValue.Body.UsuaioAnterior = UsuaioAnterior;
+            MesaDePrueba.ServiceReference2.ActualizarUsuarioResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ActualizarUsuario(inValue);
+            return retVal.Body.ActualizarUsuarioResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ActualizarUsuarioResponse> MesaDePrueba.ServiceReference2.ServicioASoap.ActualizarUsuarioAsync(MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest request) {
+            return base.Channel.ActualizarUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ActualizarUsuarioResponse> ActualizarUsuarioAsync(MesaDePrueba.ServiceReference2.Usuario user, string CorreoAnterior, string UsuaioAnterior) {
+            MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest inValue = new MesaDePrueba.ServiceReference2.ActualizarUsuarioRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ActualizarUsuarioRequestBody();
+            inValue.Body.user = user;
+            inValue.Body.CorreoAnterior = CorreoAnterior;
+            inValue.Body.UsuaioAnterior = UsuaioAnterior;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ActualizarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.CrearProductoResponse MesaDePrueba.ServiceReference2.ServicioASoap.CrearProducto(MesaDePrueba.ServiceReference2.CrearProductoRequest request) {
+            return base.Channel.CrearProducto(request);
+        }
+        
+        public bool CrearProducto(MesaDePrueba.ServiceReference2.Producto producto) {
+            MesaDePrueba.ServiceReference2.CrearProductoRequest inValue = new MesaDePrueba.ServiceReference2.CrearProductoRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.CrearProductoRequestBody();
+            inValue.Body.producto = producto;
+            MesaDePrueba.ServiceReference2.CrearProductoResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).CrearProducto(inValue);
+            return retVal.Body.CrearProductoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.CrearProductoResponse> MesaDePrueba.ServiceReference2.ServicioASoap.CrearProductoAsync(MesaDePrueba.ServiceReference2.CrearProductoRequest request) {
+            return base.Channel.CrearProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.CrearProductoResponse> CrearProductoAsync(MesaDePrueba.ServiceReference2.Producto producto) {
+            MesaDePrueba.ServiceReference2.CrearProductoRequest inValue = new MesaDePrueba.ServiceReference2.CrearProductoRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.CrearProductoRequestBody();
+            inValue.Body.producto = producto;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).CrearProductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.ComandoProductosResponse MesaDePrueba.ServiceReference2.ServicioASoap.ComandoProductos(MesaDePrueba.ServiceReference2.ComandoProductosRequest request) {
+            return base.Channel.ComandoProductos(request);
+        }
+        
+        public string ComandoProductos(int Orden) {
+            MesaDePrueba.ServiceReference2.ComandoProductosRequest inValue = new MesaDePrueba.ServiceReference2.ComandoProductosRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ComandoProductosRequestBody();
+            inValue.Body.Orden = Orden;
+            MesaDePrueba.ServiceReference2.ComandoProductosResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ComandoProductos(inValue);
+            return retVal.Body.ComandoProductosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ComandoProductosResponse> MesaDePrueba.ServiceReference2.ServicioASoap.ComandoProductosAsync(MesaDePrueba.ServiceReference2.ComandoProductosRequest request) {
+            return base.Channel.ComandoProductosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ComandoProductosResponse> ComandoProductosAsync(int Orden) {
+            MesaDePrueba.ServiceReference2.ComandoProductosRequest inValue = new MesaDePrueba.ServiceReference2.ComandoProductosRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ComandoProductosRequestBody();
+            inValue.Body.Orden = Orden;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ComandoProductosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.ActualizarProductoResponse MesaDePrueba.ServiceReference2.ServicioASoap.ActualizarProducto(MesaDePrueba.ServiceReference2.ActualizarProductoRequest request) {
+            return base.Channel.ActualizarProducto(request);
+        }
+        
+        public bool ActualizarProducto(MesaDePrueba.ServiceReference2.Producto producto) {
+            MesaDePrueba.ServiceReference2.ActualizarProductoRequest inValue = new MesaDePrueba.ServiceReference2.ActualizarProductoRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ActualizarProductoRequestBody();
+            inValue.Body.producto = producto;
+            MesaDePrueba.ServiceReference2.ActualizarProductoResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ActualizarProducto(inValue);
+            return retVal.Body.ActualizarProductoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ActualizarProductoResponse> MesaDePrueba.ServiceReference2.ServicioASoap.ActualizarProductoAsync(MesaDePrueba.ServiceReference2.ActualizarProductoRequest request) {
+            return base.Channel.ActualizarProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ActualizarProductoResponse> ActualizarProductoAsync(MesaDePrueba.ServiceReference2.Producto producto) {
+            MesaDePrueba.ServiceReference2.ActualizarProductoRequest inValue = new MesaDePrueba.ServiceReference2.ActualizarProductoRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ActualizarProductoRequestBody();
+            inValue.Body.producto = producto;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ActualizarProductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.AgregarMarcaResponse MesaDePrueba.ServiceReference2.ServicioASoap.AgregarMarca(MesaDePrueba.ServiceReference2.AgregarMarcaRequest request) {
+            return base.Channel.AgregarMarca(request);
+        }
+        
+        public bool AgregarMarca(MesaDePrueba.ServiceReference2.Marca marca) {
+            MesaDePrueba.ServiceReference2.AgregarMarcaRequest inValue = new MesaDePrueba.ServiceReference2.AgregarMarcaRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.AgregarMarcaRequestBody();
+            inValue.Body.marca = marca;
+            MesaDePrueba.ServiceReference2.AgregarMarcaResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).AgregarMarca(inValue);
+            return retVal.Body.AgregarMarcaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.AgregarMarcaResponse> MesaDePrueba.ServiceReference2.ServicioASoap.AgregarMarcaAsync(MesaDePrueba.ServiceReference2.AgregarMarcaRequest request) {
+            return base.Channel.AgregarMarcaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.AgregarMarcaResponse> AgregarMarcaAsync(MesaDePrueba.ServiceReference2.Marca marca) {
+            MesaDePrueba.ServiceReference2.AgregarMarcaRequest inValue = new MesaDePrueba.ServiceReference2.AgregarMarcaRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.AgregarMarcaRequestBody();
+            inValue.Body.marca = marca;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).AgregarMarcaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.ObtenerMarcaResponse MesaDePrueba.ServiceReference2.ServicioASoap.ObtenerMarca(MesaDePrueba.ServiceReference2.ObtenerMarcaRequest request) {
+            return base.Channel.ObtenerMarca(request);
+        }
+        
+        public string ObtenerMarca() {
+            MesaDePrueba.ServiceReference2.ObtenerMarcaRequest inValue = new MesaDePrueba.ServiceReference2.ObtenerMarcaRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ObtenerMarcaRequestBody();
+            MesaDePrueba.ServiceReference2.ObtenerMarcaResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ObtenerMarca(inValue);
+            return retVal.Body.ObtenerMarcaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ObtenerMarcaResponse> MesaDePrueba.ServiceReference2.ServicioASoap.ObtenerMarcaAsync(MesaDePrueba.ServiceReference2.ObtenerMarcaRequest request) {
+            return base.Channel.ObtenerMarcaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.ObtenerMarcaResponse> ObtenerMarcaAsync() {
+            MesaDePrueba.ServiceReference2.ObtenerMarcaRequest inValue = new MesaDePrueba.ServiceReference2.ObtenerMarcaRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.ObtenerMarcaRequestBody();
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).ObtenerMarcaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.AgregarCategoriaResponse MesaDePrueba.ServiceReference2.ServicioASoap.AgregarCategoria(MesaDePrueba.ServiceReference2.AgregarCategoriaRequest request) {
+            return base.Channel.AgregarCategoria(request);
+        }
+        
+        public bool AgregarCategoria(MesaDePrueba.ServiceReference2.Categoria categoria) {
+            MesaDePrueba.ServiceReference2.AgregarCategoriaRequest inValue = new MesaDePrueba.ServiceReference2.AgregarCategoriaRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.AgregarCategoriaRequestBody();
+            inValue.Body.categoria = categoria;
+            MesaDePrueba.ServiceReference2.AgregarCategoriaResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).AgregarCategoria(inValue);
+            return retVal.Body.AgregarCategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.AgregarCategoriaResponse> MesaDePrueba.ServiceReference2.ServicioASoap.AgregarCategoriaAsync(MesaDePrueba.ServiceReference2.AgregarCategoriaRequest request) {
+            return base.Channel.AgregarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.AgregarCategoriaResponse> AgregarCategoriaAsync(MesaDePrueba.ServiceReference2.Categoria categoria) {
+            MesaDePrueba.ServiceReference2.AgregarCategoriaRequest inValue = new MesaDePrueba.ServiceReference2.AgregarCategoriaRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.AgregarCategoriaRequestBody();
+            inValue.Body.categoria = categoria;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).AgregarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MesaDePrueba.ServiceReference2.SubirImagenResponse MesaDePrueba.ServiceReference2.ServicioASoap.SubirImagen(MesaDePrueba.ServiceReference2.SubirImagenRequest request) {
+            return base.Channel.SubirImagen(request);
+        }
+        
+        public string SubirImagen(int orden, byte[] archivoB, string nombre) {
+            MesaDePrueba.ServiceReference2.SubirImagenRequest inValue = new MesaDePrueba.ServiceReference2.SubirImagenRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.SubirImagenRequestBody();
+            inValue.Body.orden = orden;
+            inValue.Body.archivoB = archivoB;
+            inValue.Body.nombre = nombre;
+            MesaDePrueba.ServiceReference2.SubirImagenResponse retVal = ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).SubirImagen(inValue);
+            return retVal.Body.SubirImagenResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.SubirImagenResponse> MesaDePrueba.ServiceReference2.ServicioASoap.SubirImagenAsync(MesaDePrueba.ServiceReference2.SubirImagenRequest request) {
+            return base.Channel.SubirImagenAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MesaDePrueba.ServiceReference2.SubirImagenResponse> SubirImagenAsync(int orden, byte[] archivoB, string nombre) {
+            MesaDePrueba.ServiceReference2.SubirImagenRequest inValue = new MesaDePrueba.ServiceReference2.SubirImagenRequest();
+            inValue.Body = new MesaDePrueba.ServiceReference2.SubirImagenRequestBody();
+            inValue.Body.orden = orden;
+            inValue.Body.archivoB = archivoB;
+            inValue.Body.nombre = nombre;
+            return ((MesaDePrueba.ServiceReference2.ServicioASoap)(this)).SubirImagenAsync(inValue);
         }
     }
 }

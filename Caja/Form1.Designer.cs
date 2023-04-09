@@ -30,11 +30,14 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.BtnAgregarImagenFotosP = new System.Windows.Forms.Button();
             this.BtnEliminarFotosP = new System.Windows.Forms.Button();
             this.BtnActualizarFotosP = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
-            this.TBDescripcionFotosP = new System.Windows.Forms.RichTextBox();
             this.TBNombreFotosP = new System.Windows.Forms.TextBox();
             this.BtnAgregarFotosP = new System.Windows.Forms.Button();
             this.PBFotosP = new System.Windows.Forms.PictureBox();
@@ -42,6 +45,8 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.BtnEliminarProducto = new System.Windows.Forms.Button();
             this.BtnActualizarProducto = new System.Windows.Forms.Button();
             this.LBProducto = new System.Windows.Forms.ListBox();
@@ -66,6 +71,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.BtnEliminarCategoria = new System.Windows.Forms.Button();
             this.BtnActualizarCategoria = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -92,14 +99,7 @@
             this.TBNombreMarca = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.TBEMarcaProductoFoto = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBFotosP)).BeginInit();
@@ -134,6 +134,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.TBEMarcaProductoFoto);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label24);
@@ -142,7 +143,6 @@
             this.panel4.Controls.Add(this.BtnEliminarFotosP);
             this.panel4.Controls.Add(this.BtnActualizarFotosP);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.TBDescripcionFotosP);
             this.panel4.Controls.Add(this.TBNombreFotosP);
             this.panel4.Controls.Add(this.BtnAgregarFotosP);
             this.panel4.Controls.Add(this.PBFotosP);
@@ -153,6 +153,43 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(482, 375);
             this.panel4.TabIndex = 3;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(19, 66);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(111, 16);
+            this.label22.TabIndex = 38;
+            this.label22.Text = "Fotos agregadas";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(325, 123);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(56, 16);
+            this.label23.TabIndex = 38;
+            this.label23.Text = "Nombre";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(166, 281);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(52, 16);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Imagen";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(27, 338);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 26);
+            this.button4.TabIndex = 38;
+            this.button4.Text = "Limpiar";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // BtnAgregarImagenFotosP
             // 
@@ -185,25 +222,17 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(346, 69);
+            this.label21.Location = new System.Drawing.Point(176, 66);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 16);
+            this.label21.Size = new System.Drawing.Size(45, 16);
             this.label21.TabIndex = 38;
-            this.label21.Text = "URL";
-            // 
-            // TBDescripcionFotosP
-            // 
-            this.TBDescripcionFotosP.Location = new System.Drawing.Point(349, 102);
-            this.TBDescripcionFotosP.Name = "TBDescripcionFotosP";
-            this.TBDescripcionFotosP.Size = new System.Drawing.Size(109, 171);
-            this.TBDescripcionFotosP.TabIndex = 24;
-            this.TBDescripcionFotosP.Text = "";
+            this.label21.Text = "Marca";
             // 
             // TBNombreFotosP
             // 
-            this.TBNombreFotosP.Location = new System.Drawing.Point(169, 93);
+            this.TBNombreFotosP.Location = new System.Drawing.Point(325, 144);
             this.TBNombreFotosP.Name = "TBNombreFotosP";
-            this.TBNombreFotosP.Size = new System.Drawing.Size(100, 22);
+            this.TBNombreFotosP.Size = new System.Drawing.Size(143, 22);
             this.TBNombreFotosP.TabIndex = 24;
             // 
             // BtnAgregarFotosP
@@ -284,6 +313,26 @@
             this.panel3.Size = new System.Drawing.Size(582, 375);
             this.panel3.TabIndex = 2;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(24, 233);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 16);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Prductos agregadas";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(204, 338);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(74, 26);
+            this.button3.TabIndex = 37;
+            this.button3.Text = "Limpiar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // BtnEliminarProducto
             // 
             this.BtnEliminarProducto.Location = new System.Drawing.Point(289, 338);
@@ -312,6 +361,7 @@
             this.LBProducto.Name = "LBProducto";
             this.LBProducto.Size = new System.Drawing.Size(144, 100);
             this.LBProducto.TabIndex = 1;
+            this.LBProducto.DoubleClick += new System.EventHandler(this.LBProducto_DoubleClick);
             // 
             // BtnAgregarProducto
             // 
@@ -321,6 +371,7 @@
             this.BtnAgregarProducto.TabIndex = 20;
             this.BtnAgregarProducto.Text = "Agregar";
             this.BtnAgregarProducto.UseVisualStyleBackColor = true;
+            this.BtnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
             // 
             // TBDescripcionProducto
             // 
@@ -410,6 +461,7 @@
             this.BtnAgregarImagenProducto.TabIndex = 10;
             this.BtnAgregarImagenProducto.Text = "Cargar";
             this.BtnAgregarImagenProducto.UseVisualStyleBackColor = true;
+            this.BtnAgregarImagenProducto.Click += new System.EventHandler(this.BtnAgregarImagenProducto_Click);
             // 
             // PBProducto
             // 
@@ -417,6 +469,7 @@
             this.PBProducto.Location = new System.Drawing.Point(408, 88);
             this.PBProducto.Name = "PBProducto";
             this.PBProducto.Size = new System.Drawing.Size(150, 150);
+            this.PBProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBProducto.TabIndex = 9;
             this.PBProducto.TabStop = false;
             // 
@@ -503,6 +556,26 @@
             this.panel2.Size = new System.Drawing.Size(482, 293);
             this.panel2.TabIndex = 1;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(214, 62);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(143, 16);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "Categorias agregadas";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(26, 219);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(164, 24);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // BtnEliminarCategoria
             // 
             this.BtnEliminarCategoria.Location = new System.Drawing.Point(349, 91);
@@ -511,6 +584,7 @@
             this.BtnEliminarCategoria.TabIndex = 33;
             this.BtnEliminarCategoria.Text = "Eliminar";
             this.BtnEliminarCategoria.UseVisualStyleBackColor = true;
+            this.BtnEliminarCategoria.Click += new System.EventHandler(this.BtnEliminarCategoria_Click);
             // 
             // BtnActualizarCategoria
             // 
@@ -520,6 +594,7 @@
             this.BtnActualizarCategoria.TabIndex = 32;
             this.BtnActualizarCategoria.Text = "Actualizar";
             this.BtnActualizarCategoria.UseVisualStyleBackColor = true;
+            this.BtnActualizarCategoria.Click += new System.EventHandler(this.BtnActualizarCategoria_Click);
             // 
             // panel6
             // 
@@ -548,6 +623,7 @@
             this.LBCategoria.Name = "LBCategoria";
             this.LBCategoria.Size = new System.Drawing.Size(119, 100);
             this.LBCategoria.TabIndex = 26;
+            this.LBCategoria.DoubleClick += new System.EventHandler(this.LBCategoria_DoubleClick);
             // 
             // BtnAgregarCategoria
             // 
@@ -557,6 +633,7 @@
             this.BtnAgregarCategoria.TabIndex = 30;
             this.BtnAgregarCategoria.Text = "Agregar";
             this.BtnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.BtnAgregarCategoria.Click += new System.EventHandler(this.BtnAgregarCategoria_Click);
             // 
             // TBNombreCategoria
             // 
@@ -756,80 +833,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Marca";
             // 
-            // button2
+            // TBEMarcaProductoFoto
             // 
-            this.button2.Location = new System.Drawing.Point(26, 219);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 24);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(204, 338);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 26);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Limpiar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(27, 338);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 26);
-            this.button4.TabIndex = 38;
-            this.button4.Text = "Limpiar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(166, 281);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(52, 16);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Imagen";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(214, 62);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(143, 16);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "Categorias agregadas";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(166, 66);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(56, 16);
-            this.label23.TabIndex = 38;
-            this.label23.Text = "Nombre";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(19, 66);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(111, 16);
-            this.label22.TabIndex = 38;
-            this.label22.Text = "Fotos agregadas";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(24, 233);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 16);
-            this.label13.TabIndex = 42;
-            this.label13.Text = "Prductos agregadas";
+            this.TBEMarcaProductoFoto.FormattingEnabled = true;
+            this.TBEMarcaProductoFoto.Location = new System.Drawing.Point(169, 93);
+            this.TBEMarcaProductoFoto.Name = "TBEMarcaProductoFoto";
+            this.TBEMarcaProductoFoto.Size = new System.Drawing.Size(299, 24);
+            this.TBEMarcaProductoFoto.TabIndex = 42;
             // 
             // Form1
             // 
@@ -924,7 +934,6 @@
         private System.Windows.Forms.Button BtnEliminarFotosP;
         private System.Windows.Forms.Button BtnActualizarFotosP;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.RichTextBox TBDescripcionFotosP;
         private System.Windows.Forms.TextBox TBNombreFotosP;
         private System.Windows.Forms.Button BtnAgregarFotosP;
         private System.Windows.Forms.PictureBox PBFotosP;
@@ -938,6 +947,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox TBEMarcaProductoFoto;
     }
 }
 

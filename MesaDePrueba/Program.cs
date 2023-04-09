@@ -66,13 +66,14 @@ namespace MesaDePrueba
                 Logo = "1",
                 Descripcion = "1",
             };
+            Console.WriteLine(servicio.EliminarCategoria(4));
             //Console.WriteLine(servicio.AgregarMarca(marca).ToString());
             //Console.WriteLine(servicio.EliminarProducto(1).ToString());
             //for (int i = 0; i < 100; i++)
             //{
             //    Console.WriteLine(servicio.EliminarMarca(i));
             //}
-            Console.WriteLine(servicio.ImagenExiste("leo").ToString());
+            //Console.WriteLine(servicio.ImagenExiste("leo").ToString());
             //servicio.ActualizarMarca(marca);
             //Console.WriteLine(servicio.ObtenerCategoria());
             //Console.WriteLine(servicio.IngresarUsuario(usuario).ToString());

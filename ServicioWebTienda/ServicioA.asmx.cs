@@ -389,7 +389,7 @@ namespace ServicioWebTienda
         {
             try 
             {
-                if (!ProductoExiste(producto.Nombre))
+                if (ProductoExiste(producto.Nombre))
                 {
                     return false;
                 }
@@ -419,7 +419,7 @@ namespace ServicioWebTienda
             
         }
         [WebMethod]
-        private List<Imagenes> ImagenesProducto(int id)
+        public List<Imagenes> ImagenesProducto(int id)
         {
             OpenConnection();
             List<Imagenes> ListaImagenes = new List<Imagenes>();
@@ -432,7 +432,7 @@ namespace ServicioWebTienda
             {
                 ListaImagenes.Add(new Imagenes());
                 ListaImagenes[i].Nombre = reader.GetString(0);
-                ListaImagenes[i].URL = reader.GetString(1);
+                ListaImagenes[i].URL =Desencriptar(reader.GetString(1));
                 i++;
             }
             CloseConnection();
@@ -525,7 +525,7 @@ namespace ServicioWebTienda
                 ListaProductos[i].FechaDeCreacion = reader.GetDateTime(5);
                 ListaProductos[i].FechaUltimaModificacion = reader.GetDateTime(6);
                 ListaProductos[i].Estado = reader.GetBoolean(7);
-                ListaProductos[i].ImagenPrincipal = reader.GetString(8);
+                ListaProductos[i].ImagenPrincipal = Desencriptar(reader.GetString(8));
                 ListaProductos[i].Categoria = reader.GetString(9);
                 ListaProductos[i].Marca = reader.GetString(10);
                 try
@@ -619,6 +619,19 @@ namespace ServicioWebTienda
             {
                 CloseConnection();
                 return false;
+            }
+        }
+        [WebMethod]
+        public void AgregarImagenProducto() 
+        {
+            try
+            {
+                OpenConnection();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

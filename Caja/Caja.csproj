@@ -67,10 +67,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServicioWeb\Reference.cs">
+    <Compile Include="Connected Services\ServiceCategoria\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceGenerales\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceMarca\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceProducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ControlDeEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlDeEmpleados.Designer.cs">
+      <DependentUpon>ControlDeEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacturacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturacionForm.Designer.cs">
+      <DependentUpon>FacturacionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -80,6 +112,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControlDeEmpleados.resx">
+      <DependentUpon>ControlDeEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturacionForm.resx">
+      <DependentUpon>FacturacionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,58 +130,92 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ActualizarCategoriaResponse.datasource">
+    <None Include="Connected Services\ServiceCategoria\Caja.ServiceCategoria.ActualizarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ActualizarMarcaResponse.datasource">
+    <None Include="Connected Services\ServiceCategoria\Caja.ServiceCategoria.AgregarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ActualizarProductoResponse.datasource">
+    <None Include="Connected Services\ServiceCategoria\Caja.ServiceCategoria.EliminarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ActualizarUsuarioResponse.datasource">
+    <None Include="Connected Services\ServiceCategoria\Caja.ServiceCategoria.ObtenerCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.AgregarCategoriaResponse.datasource">
+    <None Include="Connected Services\ServiceCategoria\ServicioCategoria.wsdl" />
+    <None Include="Connected Services\ServiceGenerales\Caja.ServiceGenerales.ImagenExisteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.AgregarMarcaResponse.datasource">
+    <None Include="Connected Services\ServiceGenerales\Caja.ServiceGenerales.SubirImagenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ComandoProductosResponse.datasource">
+    <None Include="Connected Services\ServiceGenerales\ServicioGenerales.wsdl" />
+    <None Include="Connected Services\ServiceMarca\Caja.ServiceMarca.ActualizarMarcaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.CrearProductoResponse.datasource">
+    <None Include="Connected Services\ServiceMarca\Caja.ServiceMarca.AgregarMarcaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.EliminarUsuarioFirebaseResponse.datasource">
+    <None Include="Connected Services\ServiceMarca\Caja.ServiceMarca.EliminarMarcaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ImagenExisteResponse.datasource">
+    <None Include="Connected Services\ServiceMarca\Caja.ServiceMarca.ObtenerMarcaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.IngresarUsuarioResponse.datasource">
+    <None Include="Connected Services\ServiceMarca\ServicioMarca.wsdl" />
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.ActualizarProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.IniciarSesionFirebaseResponse.datasource">
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.AgregarImagenProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ObtenerCategoriaResponse.datasource">
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.ComandoProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ObtenerMarcaResponse.datasource">
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.CrearProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ObtenerUsuarioResponse.datasource">
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.EliminarImagenPResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.ProductoExisteResponse.datasource">
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.EliminarProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\Caja.ServicioWeb.SubirImagenResponse.datasource">
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.Imagenes.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWeb\ServicioA.wsdl" />
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.ImagenesProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.ObtenerImagenesProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.ProductoExisteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.TaskOfBoolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProducto\ServicioProducto.wsdl" />
+    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.ActualizarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.EliminarUsuarioFirebaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.EliminarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.IngresarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.IniciarSesionFirebaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.ObtenerUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\ServicioUsuario.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -162,24 +234,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServicioWeb\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioWeb\ServicioA.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioWeb\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioWeb\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioWeb\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ServicioWebTienda\ServicioWebTienda.csproj">
       <Project>{6319c369-534f-4134-8a5d-c04e64a6d01a}</Project>
       <Name>ServicioWebTienda</Name>
@@ -196,6 +250,88 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceCategoria\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceGenerales\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceMarca\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceUsuario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCategoria\ServicioCategoria.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCategoria\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCategoria\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCategoria\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceGenerales\ServicioGenerales.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceGenerales\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceGenerales\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceGenerales\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMarca\ServicioMarca.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMarca\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMarca\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMarca\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\ServicioProducto.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceUsuario\ServicioUsuario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceUsuario\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceUsuario\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceUsuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,13 +30,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.TBProductoFoto = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.BtnAgregarImagenFotosP = new System.Windows.Forms.Button();
             this.BtnEliminarFotosP = new System.Windows.Forms.Button();
-            this.BtnActualizarFotosP = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.TBNombreFotosP = new System.Windows.Forms.TextBox();
             this.BtnAgregarFotosP = new System.Windows.Forms.Button();
@@ -99,7 +99,6 @@
             this.TBNombreMarca = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.TBEMarcaProductoFoto = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBFotosP)).BeginInit();
@@ -134,14 +133,13 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.TBEMarcaProductoFoto);
+            this.panel4.Controls.Add(this.TBProductoFoto);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label24);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.BtnAgregarImagenFotosP);
             this.panel4.Controls.Add(this.BtnEliminarFotosP);
-            this.panel4.Controls.Add(this.BtnActualizarFotosP);
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.TBNombreFotosP);
             this.panel4.Controls.Add(this.BtnAgregarFotosP);
@@ -153,6 +151,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(482, 375);
             this.panel4.TabIndex = 3;
+            // 
+            // TBProductoFoto
+            // 
+            this.TBProductoFoto.FormattingEnabled = true;
+            this.TBProductoFoto.Location = new System.Drawing.Point(169, 93);
+            this.TBProductoFoto.Name = "TBProductoFoto";
+            this.TBProductoFoto.Size = new System.Drawing.Size(299, 24);
+            this.TBProductoFoto.TabIndex = 42;
+            this.TBProductoFoto.SelectedIndexChanged += new System.EventHandler(this.TBProductoFoto_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -176,7 +183,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(166, 281);
+            this.label24.Location = new System.Drawing.Point(166, 294);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(52, 16);
             this.label24.TabIndex = 37;
@@ -184,39 +191,33 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(27, 338);
+            this.button4.Location = new System.Drawing.Point(27, 320);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 26);
+            this.button4.Size = new System.Drawing.Size(119, 41);
             this.button4.TabIndex = 38;
             this.button4.Text = "Limpiar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // BtnAgregarImagenFotosP
             // 
             this.BtnAgregarImagenFotosP.Location = new System.Drawing.Point(224, 281);
             this.BtnAgregarImagenFotosP.Name = "BtnAgregarImagenFotosP";
-            this.BtnAgregarImagenFotosP.Size = new System.Drawing.Size(95, 25);
+            this.BtnAgregarImagenFotosP.Size = new System.Drawing.Size(95, 42);
             this.BtnAgregarImagenFotosP.TabIndex = 41;
             this.BtnAgregarImagenFotosP.Text = "Cargar";
             this.BtnAgregarImagenFotosP.UseVisualStyleBackColor = true;
+            this.BtnAgregarImagenFotosP.Click += new System.EventHandler(this.BtnAgregarImagenFotosP_Click);
             // 
             // BtnEliminarFotosP
             // 
-            this.BtnEliminarFotosP.Location = new System.Drawing.Point(169, 336);
+            this.BtnEliminarFotosP.Location = new System.Drawing.Point(328, 230);
             this.BtnEliminarFotosP.Name = "BtnEliminarFotosP";
-            this.BtnEliminarFotosP.Size = new System.Drawing.Size(79, 28);
+            this.BtnEliminarFotosP.Size = new System.Drawing.Size(140, 34);
             this.BtnEliminarFotosP.TabIndex = 34;
             this.BtnEliminarFotosP.Text = "Eliminar";
             this.BtnEliminarFotosP.UseVisualStyleBackColor = true;
-            // 
-            // BtnActualizarFotosP
-            // 
-            this.BtnActualizarFotosP.Location = new System.Drawing.Point(257, 336);
-            this.BtnActualizarFotosP.Name = "BtnActualizarFotosP";
-            this.BtnActualizarFotosP.Size = new System.Drawing.Size(79, 26);
-            this.BtnActualizarFotosP.TabIndex = 34;
-            this.BtnActualizarFotosP.Text = "Actualizar";
-            this.BtnActualizarFotosP.UseVisualStyleBackColor = true;
+            this.BtnEliminarFotosP.Click += new System.EventHandler(this.BtnEliminarFotosP_Click);
             // 
             // label21
             // 
@@ -237,12 +238,13 @@
             // 
             // BtnAgregarFotosP
             // 
-            this.BtnAgregarFotosP.Location = new System.Drawing.Point(349, 336);
+            this.BtnAgregarFotosP.Location = new System.Drawing.Point(328, 188);
             this.BtnAgregarFotosP.Name = "BtnAgregarFotosP";
-            this.BtnAgregarFotosP.Size = new System.Drawing.Size(85, 25);
+            this.BtnAgregarFotosP.Size = new System.Drawing.Size(140, 34);
             this.BtnAgregarFotosP.TabIndex = 36;
             this.BtnAgregarFotosP.Text = "Agregar";
             this.BtnAgregarFotosP.UseVisualStyleBackColor = true;
+            this.BtnAgregarFotosP.Click += new System.EventHandler(this.BtnAgregarFotosP_Click);
             // 
             // PBFotosP
             // 
@@ -250,6 +252,7 @@
             this.PBFotosP.Location = new System.Drawing.Point(169, 123);
             this.PBFotosP.Name = "PBFotosP";
             this.PBFotosP.Size = new System.Drawing.Size(150, 150);
+            this.PBFotosP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBFotosP.TabIndex = 36;
             this.PBFotosP.TabStop = false;
             // 
@@ -261,6 +264,7 @@
             this.LBFotosP.Name = "LBFotosP";
             this.LBFotosP.Size = new System.Drawing.Size(119, 212);
             this.LBFotosP.TabIndex = 27;
+            this.LBFotosP.DoubleClick += new System.EventHandler(this.LBFotosP_DoubleClick);
             // 
             // panel8
             // 
@@ -833,14 +837,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Marca";
             // 
-            // TBEMarcaProductoFoto
-            // 
-            this.TBEMarcaProductoFoto.FormattingEnabled = true;
-            this.TBEMarcaProductoFoto.Location = new System.Drawing.Point(169, 93);
-            this.TBEMarcaProductoFoto.Name = "TBEMarcaProductoFoto";
-            this.TBEMarcaProductoFoto.Size = new System.Drawing.Size(299, 24);
-            this.TBEMarcaProductoFoto.TabIndex = 42;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -932,7 +928,6 @@
         private System.Windows.Forms.Button BtnActualizarMarca;
         private System.Windows.Forms.Button BtnAgregarImagenFotosP;
         private System.Windows.Forms.Button BtnEliminarFotosP;
-        private System.Windows.Forms.Button BtnActualizarFotosP;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox TBNombreFotosP;
         private System.Windows.Forms.Button BtnAgregarFotosP;
@@ -947,7 +942,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox TBEMarcaProductoFoto;
+        private System.Windows.Forms.ComboBox TBProductoFoto;
     }
 }
 

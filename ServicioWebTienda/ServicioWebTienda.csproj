@@ -373,7 +373,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ServicioA.asmx" />
+    <Content Include="ServicioCategoria.asmx" />
+    <Content Include="ServicioEmpleado.asmx" />
+    <Content Include="ServicioGenerales.asmx" />
+    <Content Include="ServicioMarca.asmx" />
+    <Content Include="ServicioProducto.asmx" />
+    <Content Include="ServicioUsuario.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -385,8 +390,28 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ServicioA.asmx.cs">
-      <DependentUpon>ServicioA.asmx</DependentUpon>
+    <Compile Include="ServicioCategoria.asmx.cs">
+      <DependentUpon>ServicioCategoria.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicioEmpleado.asmx.cs">
+      <DependentUpon>ServicioEmpleado.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicioGenerales.asmx.cs">
+      <DependentUpon>ServicioGenerales.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicioMarca.asmx.cs">
+      <DependentUpon>ServicioMarca.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicioProducto.asmx.cs">
+      <DependentUpon>ServicioProducto.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicioUsuario.asmx.cs">
+      <DependentUpon>ServicioUsuario.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

@@ -21,16 +21,22 @@ namespace Caja
         {
             InitializeComponent();
         }
-        ServicioWeb.ServicioASoapClient servicioA = new ServicioWeb.ServicioASoapClient();
-        ServicioWeb.Marca marca = new ServicioWeb.Marca();
-        List<ServicioWeb.Marca> ListaMarca = new List<ServicioWeb.Marca>(); 
-        List<ServicioWeb.Categoria> ListaCategoria = new List<ServicioWeb.Categoria>(); 
-        ServicioWeb.Producto producto = new ServicioWeb.Producto();
-        List<ServicioWeb.Producto> ListaProducto = new List<ServicioWeb.Producto>();
-        ServicioWeb.Categoria categoria = new ServicioWeb.Categoria();
-        ServicioWebTienda.Imagenes imagenes = new ServicioWebTienda.Imagenes();
+        ServiceCategoria.ServicioCategoriaSoapClient servicioCategoria = new ServiceCategoria.ServicioCategoriaSoapClient();
+        ServiceGenerales.ServicioGeneralesSoapClient servicioGenerales = new ServiceGenerales.ServicioGeneralesSoapClient();
+        ServiceMarca.ServicioMarcaSoapClient servicioMarca = new ServiceMarca.ServicioMarcaSoapClient();
+        ServiceProducto.ServicioProductoSoapClient servicioProducto = new ServiceProducto.ServicioProductoSoapClient();
+        ServiceMarca.Marca servicemarca = new ServiceMarca.Marca();
+        List<ServiceMarca.Marca> ListaMarca = new List<ServiceMarca.Marca>(); 
+        List<ServiceCategoria.Categoria> ListaCategoria = new List<ServiceCategoria.Categoria>(); 
+        ServiceProducto.Producto producto = new ServiceProducto.Producto();
+        List<ServiceProducto.Producto> ListaProducto = new List<ServiceProducto.Producto>();
+        ServiceCategoria.Categoria categoria = new ServiceCategoria.Categoria();
+        ServiceProducto.Imagenes Imagenes = new ServiceProducto.Imagenes();
+        List<ServiceProducto.Imagenes> Limagenes = new List<ServiceProducto.Imagenes>();
         public string URLMarcaImagen = null;
         public string URLProductoImagen = null;
+        public string URLProductoImagenes = null;
+        public string User = "leonardocruzapolinar";
         private void BtnAgregarMarca_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Estás seguro de que quieres realizar esta acción?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -38,13 +44,13 @@ namespace Caja
             {
                 if (TBDescricionMarca.Text != "" && TBNombreMarca.Text != "" && PBMarca.Image != null && URLMarcaImagen != null)
                 {
-                    ServicioWeb.Marca marcaA = new ServicioWeb.Marca()
+                    ServiceMarca.Marca marcaA = new ServiceMarca.Marca()
                     {
                         Nombre = TBNombreMarca.Text,
                         Descripcion = TBDescricionMarca.Text,
                         Logo = URLMarcaImagen,
                     };
-                    if (servicioA.AgregarMarca(marcaA))
+                    if (servicioMarca.AgregarMarca(marcaA, User, 2))
                     {
                         MessageBox.Show("Bien");
                     }
@@ -85,9 +91,10 @@ namespace Caja
                 Image.FromFile(rutaImagen).Save(ms, ImageFormat.Png);
                 ms.Seek(0, SeekOrigin.Begin);
                 byte[] archivoB = ms.ToArray();
-                var x = await servicioA.SubirImagenAsync(5, archivoB, TBNombreMarca.Text + "Imagen");
+                var x = await servicioGenerales.SubirImagenAsync(5, archivoB, TBNombreMarca.Text + "Imagen", User, 2);
                 url =  x.Body.SubirImagenResult;
                 URLMarcaImagen = url;
+                MessageBox.Show("La imagen se ha subido con exito");
                 return url;
             }
             return url;
@@ -123,7 +130,7 @@ namespace Caja
                     ListaMarca = null;
                     TBMarcaProducto.Items.Clear();
                     LBMarca.Items.Clear();
-                    ListaMarca = JsonConvert.DeserializeObject<List<ServicioWeb.Marca>>(servicioA.ObtenerMarca());
+                    ListaMarca = JsonConvert.DeserializeObject<List<ServiceMarca.Marca>>(servicioMarca.ObtenerMarca(User, 2));
                     for (int i = 0; i < ListaMarca.Count; i++)
                     {
                         LBMarca.Items.Add(ListaMarca[i].Nombre);
@@ -134,7 +141,7 @@ namespace Caja
                     ListaCategoria = null;
                     LBCategoria.Items.Clear();
                     TBCategoriaProducto.Items.Clear();
-                    ListaCategoria = JsonConvert.DeserializeObject<List<ServicioWeb.Categoria>>(servicioA.ObtenerCategoria());
+                    ListaCategoria = JsonConvert.DeserializeObject<List<ServiceCategoria.Categoria>>(servicioCategoria.ObtenerCategoria(User, 2));
                     for (int i = 0; i < ListaCategoria.Count; i++)
                     {
                         LBCategoria.Items.Add(ListaCategoria[i].Nombre);
@@ -143,11 +150,12 @@ namespace Caja
                     break;
                 case 3:
                     ListaProducto = null;
-                    LBProducto.Items.Clear();
-                    ListaProducto = JsonConvert.DeserializeObject<List<ServicioWeb.Producto>>(servicioA.ComandoProductos(1));
+                    LBProducto.Items.Clear(); TBProductoFoto.Items.Clear();
+                    ListaProducto = JsonConvert.DeserializeObject<List<ServiceProducto.Producto>>(servicioProducto.ComandoProductos(1, User, 2));
                     for (int i = 0; i < ListaProducto.Count; i++)
                     {
                         LBProducto.Items.Add(ListaProducto[i].Nombre);
+                        TBProductoFoto.Items.Add(ListaProducto[i].Nombre);
                     }
                     break;
                 case 4:
@@ -164,7 +172,7 @@ namespace Caja
                 TBNombreMarca.Text = null;
                 PBMarca.Image = null;
                 URLMarcaImagen = null;
-                Dictionary<string, ServicioWeb.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
+                Dictionary<string, ServiceMarca.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
                 try
                 {
                     WebClient wc = new WebClient();
@@ -197,8 +205,8 @@ namespace Caja
             {
                 if (LBMarca.SelectedItem != null)
                 {
-                    Dictionary<string, ServicioWeb.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
-                    if (servicioA.EliminarMarca(diccionario[LBMarca.SelectedItem.ToString()].Id))
+                    Dictionary<string, ServiceMarca.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
+                    if (servicioMarca.EliminarMarca(diccionario[LBMarca.SelectedItem.ToString()].Id, User, 2))
                     {
 
                         TBDescricionMarca.Text = null;
@@ -229,16 +237,16 @@ namespace Caja
                 {
                     if (LBMarca.SelectedItem != null)
                     {
-                        Dictionary<string, ServicioWeb.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
+                        Dictionary<string, ServiceMarca.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
                         if (URLMarcaImagen == null) { URLMarcaImagen = "imagen"; }
-                        ServicioWeb.Marca marcaA = new ServicioWeb.Marca()
+                        ServiceMarca.Marca marcaA = new ServiceMarca.Marca()
                         {
                             Id = diccionario[LBMarca.SelectedItem.ToString()].Id,
                             Nombre = TBNombreMarca.Text,
                             Descripcion = TBDescricionMarca.Text,
                             Logo = URLMarcaImagen,
                         };
-                        if (servicioA.ActualizarMarca(marcaA))
+                        if (servicioMarca.ActualizarMarca(marcaA, User, 2))
                         {
                             MessageBox.Show("bien");
                             ActualizarListas(1);
@@ -279,8 +287,8 @@ namespace Caja
             {
                 if (LBProducto.SelectedItem != null)
                 {
-                    Dictionary<string, ServicioWeb.Producto> diccionario = ListaProducto.ToDictionary(m => m.Nombre);
-                    if (servicioA.EliminarProducto(diccionario[LBProducto.SelectedItem.ToString()].Id))
+                    Dictionary<string, ServiceProducto.Producto> diccionario = ListaProducto.ToDictionary(m => m.Nombre);
+                    if (servicioProducto.EliminarProducto(diccionario[LBProducto.SelectedItem.ToString()].Id, User, 2))
                     {
 
                         MessageBox.Show("Bien");
@@ -316,11 +324,11 @@ namespace Caja
                 {
                     if (LBProducto.SelectedItem != null)
                     {
-                        Dictionary<string, ServicioWeb.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
-                        Dictionary<string, ServicioWeb.Categoria> diccionarioC = ListaCategoria.ToDictionary(m => m.Nombre);
-                        Dictionary<string, ServicioWeb.Producto> diccionarioP = ListaProducto.ToDictionary(m => m.Nombre);
+                        Dictionary<string, ServiceMarca.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
+                        Dictionary<string, ServiceCategoria.Categoria> diccionarioC = ListaCategoria.ToDictionary(m => m.Nombre);
+                        Dictionary<string, ServiceProducto.Producto> diccionarioP = ListaProducto.ToDictionary(m => m.Nombre);
                         if (URLProductoImagen == null) { URLProductoImagen = "imagen"; }
-                        ServicioWeb.Producto productoA = new ServicioWeb.Producto()
+                        ServiceProducto.Producto productoA = new ServiceProducto.Producto()
                         {
                             Id = diccionarioP[LBProducto.SelectedItem.ToString()].Id,
                             Nombre = TBNombreProducto.Text,
@@ -334,7 +342,7 @@ namespace Caja
                             FechaUltimaModificacion = DateTime.Now,
                             FechaDeCreacion = diccionarioP[LBProducto.SelectedItem.ToString()].FechaDeCreacion,
                         };
-                        if (servicioA.ActualizarProducto(productoA))
+                        if (servicioProducto.ActualizarProducto(productoA, User, 2))
                         {
                             MessageBox.Show("bien");
                             ActualizarListas(3);
@@ -372,10 +380,9 @@ namespace Caja
             {
                 if (TBDescripcionProducto.Text != "" && TBNombreProducto.Text != "" && TBDescripcionProducto != null && TBStockProducto.Text != "" && TBEstadoProducto.Text != "" && TBMarcaProducto.Text != "" && TBCategoriaProducto.Text != "" && TBPrecioProducto.Text != "" && URLProductoImagen != null && PBProducto.Image != null)
                 {
-                    Dictionary<string, ServicioWeb.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
-                    Dictionary<string, ServicioWeb.Categoria> diccionarioC = ListaCategoria.ToDictionary(m => m.Nombre);
-                    ServicioWebTienda.ServicioA servicio = new ServicioWebTienda.ServicioA();
-                    ServicioWebTienda.Producto productoA = new ServicioWebTienda.Producto()
+                    Dictionary<string, ServiceMarca.Marca> diccionario = ListaMarca.ToDictionary(m => m.Nombre);
+                    Dictionary<string, ServiceCategoria.Categoria> diccionarioC = ListaCategoria.ToDictionary(m => m.Nombre);
+                    ServiceProducto.Producto productoA = new ServiceProducto.Producto()
                     {
                         Nombre = TBNombreProducto.Text,
                         Descripcion = TBDescripcionProducto.Text,
@@ -388,7 +395,7 @@ namespace Caja
                         FechaUltimaModificacion = DateTime.Now,
                         FechaDeCreacion = DateTime.Now,
                     };
-                    if (servicio.CrearProducto(productoA))
+                    if (servicioProducto.CrearProducto(productoA, User, 2))
                     {
                         MessageBox.Show("Bien");
                         TBNombreProducto.Text = null;
@@ -455,9 +462,10 @@ namespace Caja
                 }
 
                 byte[] archivoB = File.ReadAllBytes(rutaImagen);
-                var x = await servicioA.SubirImagenAsync(5, archivoB, TBNombreProducto.Text + "Imagen");
+                var x = await servicioGenerales.SubirImagenAsync(2, archivoB, TBNombreProducto.Text + "Imagen", User, 2);
                 url = x.Body.SubirImagenResult;
                 URLProductoImagen = url;
+                MessageBox.Show("La imagen se ha subido con exito");
                 return url;
             }
             return url;
@@ -470,7 +478,7 @@ namespace Caja
             {
                 TBDescricionCategoria.Text = null;
                 TBNombreCategoria.Text = null;
-                Dictionary<string, ServicioWeb.Categoria> diccionario = ListaCategoria.ToDictionary(m => m.Nombre);
+                Dictionary<string, ServiceCategoria.Categoria> diccionario = ListaCategoria.ToDictionary(m => m.Nombre);
 
                 TBNombreCategoria.Text = diccionario[LBCategoria.SelectedItem.ToString()].Nombre;
                 TBDescricionCategoria.Text = diccionario[LBCategoria.SelectedItem.ToString()].Descripcion;
@@ -485,12 +493,12 @@ namespace Caja
             {
                 if (TBDescricionCategoria.Text != "" && TBNombreCategoria.Text != "")
                 {
-                    ServicioWeb.Categoria categoriaA = new ServicioWeb.Categoria()
+                    ServiceCategoria.Categoria categoriaA = new ServiceCategoria.Categoria()
                     {
                         Nombre = TBNombreCategoria.Text,
                         Descripcion = TBDescricionCategoria.Text,
                     };
-                    if (servicioA.AgregarCategoria(categoriaA))
+                    if (servicioCategoria.AgregarCategoria(categoriaA, User, 2))
                     {
                         MessageBox.Show("Bien");
                     }
@@ -518,14 +526,14 @@ namespace Caja
                 {
                     if (LBCategoria.SelectedItem != null)
                     {
-                        Dictionary<string, ServicioWeb.Categoria> diccionario = ListaCategoria.ToDictionary(m => m.Nombre);
-                        ServicioWeb.Categoria categoriaA = new ServicioWeb.Categoria()
+                        Dictionary<string, ServiceCategoria.Categoria> diccionario = ListaCategoria.ToDictionary(m => m.Nombre);
+                        ServiceCategoria.Categoria categoriaA = new ServiceCategoria.Categoria()
                         {
                             Id = diccionario[LBCategoria.SelectedItem.ToString()].Id,
                             Nombre = TBNombreCategoria.Text,
                             Descripcion = TBDescricionCategoria.Text,
                         };
-                        if (servicioA.ActualizarCategoria(categoriaA))
+                        if (servicioCategoria.ActualizarCategoria(categoriaA, User, 2))
                         {
                             MessageBox.Show("bien");
                             ActualizarListas(2);
@@ -557,8 +565,8 @@ namespace Caja
             {
                 if (LBCategoria.SelectedItem != null)
                 {
-                    Dictionary<string, ServicioWeb.Categoria> diccionario = ListaCategoria.ToDictionary(m => m.Nombre);
-                    if (servicioA.EliminarCategoria(diccionario[LBCategoria.SelectedItem.ToString()].Id))
+                    Dictionary<string, ServiceCategoria.Categoria> diccionario = ListaCategoria.ToDictionary(m => m.Nombre);
+                    if (servicioCategoria.EliminarCategoria(diccionario[LBCategoria.SelectedItem.ToString()].Id, User, 2))
                     {
 
                         TBDescricionCategoria.Text = null;
@@ -608,7 +616,7 @@ namespace Caja
                 TBCategoriaProducto.Text = null;
                 TBPrecioProducto.Text = null;
                 PBProducto.Image = null;
-                Dictionary<string, ServicioWeb.Producto> diccionario = ListaProducto.ToDictionary(m => m.Nombre);
+                Dictionary<string, ServiceProducto.Producto> diccionario = ListaProducto.ToDictionary(m => m.Nombre);
                 try
                 {
                     WebClient wc = new WebClient();
@@ -630,6 +638,175 @@ namespace Caja
                 TBCategoriaProducto.Text = diccionario[LBProducto.SelectedItem.ToString()].Categoria;
                 TBPrecioProducto.Text = diccionario[LBProducto.SelectedItem.ToString()].Precio.ToString();
 
+            }
+        }
+
+        private void BtnAgregarFotosP_Click(object sender, EventArgs e)
+        {
+           
+            DialogResult result = MessageBox.Show("¿Estás seguro de que quieres realizar esta acción?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (TBNombreFotosP.Text != "" && TBProductoFoto.Text != "")
+                {
+                    Dictionary<string, ServiceProducto.Producto> diccionario = ListaProducto.ToDictionary(m => m.Nombre);
+                    ServiceProducto.Imagenes ImagenA = new ServiceProducto.Imagenes()
+                    {
+                        Nombre = TBNombreFotosP.Text,
+                        URL = URLProductoImagenes,
+                        FechaDeAsignacion = DateTime.Now,
+                        IDP = diccionario[TBProductoFoto.Text].Id
+                    };
+                    if (servicioProducto.AgregarImagenProducto(ImagenA, User, 2))
+                    {
+                        MessageBox.Show("Bien");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mal");
+                    }
+                    ActualizarListas(1);
+                    TBNombreFotosP.Text = null;
+                    TBProductoFoto.Text = null;
+                    PBFotosP.Image = null;
+                    LBFotosP.Items.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Todos lo campos deben de estar llenos");
+                }
+            }
+        }
+
+        private void TBProductoFoto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ServicioWebTienda.ServicioProducto servicioProducto = new ServicioWebTienda.ServicioProducto();
+            if (TBProductoFoto.Text != "")
+            {
+                try
+                {
+                    LBFotosP.Items.Clear();
+                    Dictionary<string, ServiceProducto.Producto> diccionario = ListaProducto.ToDictionary(m => m.Nombre);
+                    string X = servicioProducto.ObtenerImagenesProducto(diccionario[TBProductoFoto.Text].Id,User,2);
+                    Limagenes = JsonConvert.DeserializeObject<List<ServiceProducto.Imagenes>>(X);
+                    for (int i = 0; i < Limagenes.Count; i++)
+                    {
+                        LBFotosP.Items.Add(Limagenes[i].Nombre);
+                    }
+                }
+                catch (Exception)
+                {
+
+
+                }
+            }
+
+        }
+
+
+        private async Task<string> ObtenerUrlProductoImages()
+        {
+            string url = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            // Filtro de archivos para que sólo se muestren imágenes
+            openFileDialog1.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif;*.png)|*.bmp;*.jpg;*.gif;*.png";
+
+            // Se muestra el diálogo y se espera a que el usuario seleccione un archivo
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Se obtiene la ruta del archivo seleccionado
+                string rutaImagen = openFileDialog1.FileName;
+
+                // Aquí puedes hacer lo que quieras con la imagen seleccionada, por ejemplo:
+                PBFotosP.Image = Image.FromFile(rutaImagen);
+
+                // Si la imagen no es de tipo PNG, se convierte a ese formato
+                if (Path.GetExtension(rutaImagen).ToLower() != ".png")
+                {
+                    Bitmap imagen = new Bitmap(rutaImagen);
+                    MemoryStream ms = new MemoryStream();
+                    imagen.Save(ms, ImageFormat.Png);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    rutaImagen = Path.ChangeExtension(rutaImagen, ".png");
+                    File.WriteAllBytes(rutaImagen, ms.ToArray());
+                }
+
+                byte[] archivoB = File.ReadAllBytes(rutaImagen);
+                var x = await servicioGenerales.SubirImagenAsync(2, archivoB, TBNombreFotosP.Text + "Imagen", User, 2);
+                url = x.Body.SubirImagenResult;
+                MessageBox.Show("La imagen se ha subido con exito");
+                return url;
+            }
+            return url;
+
+        }
+
+        private  void BtnAgregarImagenFotosP_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TBNombreFotosP.Text))
+            {
+                URLProductoImagenes =  ObtenerUrlProductoImages().Result;
+                // Aquí puedes hacer lo que quieras con la URL de la imagen
+            }
+            else
+            {
+                MessageBox.Show("Primero debe asignar un nombre a la imagen del producto");
+            }
+        }
+
+        private void LBFotosP_DoubleClick(object sender, EventArgs e)
+        {
+            if (LBFotosP.SelectedItem != null)
+            {
+                TBProductoFoto.Text = null;
+                TBNombreFotosP.Text = null;
+                PBFotosP.Image = null;
+                URLProductoImagenes = null;
+                Dictionary<string, ServiceProducto.Imagenes> diccionario = Limagenes.ToDictionary(m => m.Nombre);
+                try
+                {
+                    WebClient wc = new WebClient();
+                    byte[] bytes = wc.DownloadData(diccionario[LBFotosP.SelectedItem.ToString()].URL);
+                    MemoryStream ms = new MemoryStream(bytes);
+                    URLProductoImagenes = diccionario[LBFotosP.SelectedItem.ToString()].URL;
+                    Image imagen = Image.FromStream(ms);
+                    PBFotosP.Image = imagen;
+
+                }
+                catch (Exception)
+                {
+                }
+                Dictionary<int, ServiceProducto.Producto> diccionarioP = ListaProducto.ToDictionary(m => m.Id);
+                TBNombreFotosP.Text = diccionario[LBFotosP.SelectedItem.ToString()].Nombre;
+                TBProductoFoto.Text = diccionarioP[diccionario[LBFotosP.SelectedItem.ToString()].IDP].Nombre;
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PBFotosP.Image = null;
+            TBNombreFotosP.Text = null;
+            TBProductoFoto.Text = null;
+            LBFotosP.Items.Clear();
+        }
+
+        private async void BtnEliminarFotosP_Click(object sender, EventArgs e)
+        {
+            if (LBProducto.SelectedItem != null)
+            {
+                Dictionary<string, ServiceProducto.Imagenes> diccionario = Limagenes.ToDictionary(m => m.Nombre);
+                ServicioWebTienda.ServicioProducto servicioProducto = new ServicioWebTienda.ServicioProducto();
+                await servicioProducto.EliminarImagenP(diccionario[LBFotosP.SelectedItem.ToString()].Nombre);
+                PBFotosP.Image = null;
+                TBNombreFotosP.Text = null;
+                TBProductoFoto.Text = null;
+                LBFotosP.Items.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una foto");
             }
         }
     }

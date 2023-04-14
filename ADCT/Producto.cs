@@ -135,7 +135,7 @@ namespace ADCT
                 ListaProductos[i].FechaDeCreacion = reader.GetDateTime(5);
                 ListaProductos[i].FechaUltimaModificacion = reader.GetDateTime(6);
                 ListaProductos[i].Estado = reader.GetBoolean(7);
-                ListaProductos[i].ImagenPrincipal = reader.GetString(8);
+                ListaProductos[i].ImagenPrincipal = Desencriptar(reader.GetString(8));
                 ListaProductos[i].Categoria = reader.GetString(9);
                 ListaProductos[i].Marca = reader.GetString(10);
                 try

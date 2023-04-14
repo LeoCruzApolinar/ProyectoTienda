@@ -19,10 +19,26 @@ namespace Caja
 
         private void FacturacionForm_Load(object sender, EventArgs e)
         {
+            //tableLayoutPanel3.Paint += new PaintEventHandler(tableLayoutPanel3_Paint);
+            tableLayoutPanel4.Paint += new PaintEventHandler(tableLayoutPanel4_Paint);
+        }
 
-            label1.Location = new Point(
-            (panel2.Width - label1.Width) / 2,
-            (panel2.Height - label1.Height) / 2);
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+            //ControlPaint.DrawBorder(e.Graphics, tableLayoutPanel3.ClientRectangle, Color.Black,
+            //    1, ButtonBorderStyle.Solid, Color.Black, 1, ButtonBorderStyle.Solid,
+            //    Color.Black, 1, ButtonBorderStyle.Solid, Color.Transparent, 0,
+            //    ButtonBorderStyle.None);
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, tableLayoutPanel4.ClientRectangle, Color.Black,
+                0, ButtonBorderStyle.Solid, Color.Gray, 1, ButtonBorderStyle.Solid,
+                Color.Black, 0, ButtonBorderStyle.Solid, Color.Transparent, 0,
+                ButtonBorderStyle.None);
         }
     }
 }

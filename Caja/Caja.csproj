@@ -98,6 +98,18 @@
     <Compile Include="ControlDeEmpleados.Designer.cs">
       <DependentUpon>ControlDeEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlObjProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlObjProducto.Designer.cs">
+      <DependentUpon>ControlObjProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlProductos.Designer.cs">
+      <DependentUpon>ControlProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ControlDeEmpleados.resx">
       <DependentUpon>ControlDeEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlObjProducto.resx">
+      <DependentUpon>ControlObjProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlProductos.resx">
+      <DependentUpon>ControlProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturacionForm.resx">
       <DependentUpon>FacturacionForm.cs</DependentUpon>

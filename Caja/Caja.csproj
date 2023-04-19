@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -67,6 +67,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonCategoriaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonCategoriaControl.Designer.cs">
+      <DependentUpon>ButtonCategoriaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clase.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="Connected Services\ServiceCategoria\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,11 +91,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceProducto\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServiceUsuario\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -110,6 +113,14 @@
     <Compile Include="ControlProductos.Designer.cs">
       <DependentUpon>ControlProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FacturacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,8 +133,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestorBaseDeDatos.cs" />
+    <Compile Include="ListaProductoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaProductoControl.Designer.cs">
+      <DependentUpon>ListaProductoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectClienteForm.Designer.cs">
+      <DependentUpon>SelectClienteForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ButtonCategoriaControl.resx">
+      <DependentUpon>ButtonCategoriaControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlDeEmpleados.resx">
       <DependentUpon>ControlDeEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +166,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaProductoControl.resx">
+      <DependentUpon>ListaProductoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,6 +178,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectClienteForm.resx">
+      <DependentUpon>SelectClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\ServiceCategoria\Caja.ServiceCategoria.ActualizarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -160,14 +193,14 @@
     <None Include="Connected Services\ServiceCategoria\Caja.ServiceCategoria.ObtenerCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCategoria\ServicioCategoria.wsdl" />
+    <None Include="Connected Services\ServiceCategoria\Categoria.wsdl" />
     <None Include="Connected Services\ServiceGenerales\Caja.ServiceGenerales.ImagenExisteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceGenerales\Caja.ServiceGenerales.SubirImagenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceGenerales\ServicioGenerales.wsdl" />
+    <None Include="Connected Services\ServiceGenerales\Generales.wsdl" />
     <None Include="Connected Services\ServiceMarca\Caja.ServiceMarca.ActualizarMarcaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -180,7 +213,7 @@
     <None Include="Connected Services\ServiceMarca\Caja.ServiceMarca.ObtenerMarcaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceMarca\ServicioMarca.wsdl" />
+    <None Include="Connected Services\ServiceMarca\Marca.wsdl" />
     <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.ActualizarProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -214,26 +247,18 @@
     <None Include="Connected Services\ServiceProducto\Caja.ServiceProducto.TaskOfBoolean.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceProducto\ServicioProducto.wsdl" />
-    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.ActualizarUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Connected Services\ServiceProducto\Producto.wsdl" />
+    <None Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.EliminarUsuarioFirebaseResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.EliminarUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.IngresarUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.IniciarSesionFirebaseResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceUsuario\Caja.ServiceUsuario.ObtenerUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceUsuario\ServicioUsuario.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -274,10 +299,9 @@
     <WCFMetadataStorage Include="Connected Services\ServiceGenerales\" />
     <WCFMetadataStorage Include="Connected Services\ServiceMarca\" />
     <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceUsuario\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceCategoria\ServicioCategoria.disco" />
+    <None Include="Connected Services\ServiceCategoria\Categoria.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceCategoria\configuration91.svcinfo" />
@@ -292,7 +316,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceGenerales\ServicioGenerales.disco" />
+    <None Include="Connected Services\ServiceGenerales\Generales.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceGenerales\configuration91.svcinfo" />
@@ -307,7 +331,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceMarca\ServicioMarca.disco" />
+    <None Include="Connected Services\ServiceMarca\Marca.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceMarca\configuration91.svcinfo" />
@@ -322,7 +346,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceProducto\ServicioProducto.disco" />
+    <None Include="Connected Services\ServiceProducto\Producto.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceProducto\configuration91.svcinfo" />
@@ -337,19 +361,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceUsuario\ServicioUsuario.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceUsuario\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceUsuario\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceUsuario\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <Content Include="TiendaBD.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TiendaBD_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>TiendaBD.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

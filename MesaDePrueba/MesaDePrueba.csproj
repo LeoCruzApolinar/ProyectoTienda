@@ -58,6 +58,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Connected Services\ServiceReference2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,43 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.ActualizarProductoResponse.datasource">
+    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.ActualizarUsuarioResponse.datasource">
+    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.TaskOfIHttpActionResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.AgregarCategoriaResponse.datasource">
+    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.TransaccionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.AgregarMarcaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.ComandoProductosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.CrearProductoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.EliminarUsuarioFirebaseResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.IngresarUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.IniciarSesionFirebaseResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.ObtenerMarcaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.ObtenerUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\MesaDePrueba.ServiceReference2.SubirImagenResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference2\ServicioA.wsdl" />
+    <None Include="Connected Services\ServiceReference2\WebService1.wsdl" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -166,7 +141,7 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\ServicioA.disco" />
+    <None Include="Connected Services\ServiceReference2\WebService1.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1e7dae65-8e73-45f6-96e7-9f86670362f7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="f5a2e7d0-bdc9-48ba-9659-975b0a83d941" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioProducto.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Producto.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServicioProducto.wsdl" MetadataType="Wsdl" ID="e8611833-95a4-4a94-b3a9-018a5c0792ff" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioProducto.asmx?wsdl" />
-    <MetadataFile FileName="ServicioProducto.disco" MetadataType="Disco" ID="1e4b5cec-94cf-43ef-8329-07222e49bb2d" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioProducto.asmx?disco" />
+    <MetadataFile FileName="Producto.wsdl" MetadataType="Wsdl" ID="f7f32775-5018-4ad8-be7a-1509d9f9d925" SourceId="1" SourceUrl="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Producto.asmx?wsdl" />
+    <MetadataFile FileName="Producto.disco" MetadataType="Disco" ID="d7368b91-cec1-4f27-a35d-df1c54ca9e65" SourceId="1" SourceUrl="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Producto.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

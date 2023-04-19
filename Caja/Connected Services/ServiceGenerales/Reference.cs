@@ -12,8 +12,8 @@ namespace Caja.ServiceGenerales {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceGenerales.ServicioGeneralesSoap")]
-    public interface ServicioGeneralesSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceGenerales.GeneralesSoap")]
+    public interface GeneralesSoap {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento archivoB del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SubirImagen", ReplyAction="*")]
@@ -191,34 +191,34 @@ namespace Caja.ServiceGenerales {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ServicioGeneralesSoapChannel : Caja.ServiceGenerales.ServicioGeneralesSoap, System.ServiceModel.IClientChannel {
+    public interface GeneralesSoapChannel : Caja.ServiceGenerales.GeneralesSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServicioGeneralesSoapClient : System.ServiceModel.ClientBase<Caja.ServiceGenerales.ServicioGeneralesSoap>, Caja.ServiceGenerales.ServicioGeneralesSoap {
+    public partial class GeneralesSoapClient : System.ServiceModel.ClientBase<Caja.ServiceGenerales.GeneralesSoap>, Caja.ServiceGenerales.GeneralesSoap {
         
-        public ServicioGeneralesSoapClient() {
+        public GeneralesSoapClient() {
         }
         
-        public ServicioGeneralesSoapClient(string endpointConfigurationName) : 
+        public GeneralesSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServicioGeneralesSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public GeneralesSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioGeneralesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public GeneralesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioGeneralesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public GeneralesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceGenerales.SubirImagenResponse Caja.ServiceGenerales.ServicioGeneralesSoap.SubirImagen(Caja.ServiceGenerales.SubirImagenRequest request) {
+        Caja.ServiceGenerales.SubirImagenResponse Caja.ServiceGenerales.GeneralesSoap.SubirImagen(Caja.ServiceGenerales.SubirImagenRequest request) {
             return base.Channel.SubirImagen(request);
         }
         
@@ -230,12 +230,12 @@ namespace Caja.ServiceGenerales {
             inValue.Body.nombre = nombre;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceGenerales.SubirImagenResponse retVal = ((Caja.ServiceGenerales.ServicioGeneralesSoap)(this)).SubirImagen(inValue);
+            Caja.ServiceGenerales.SubirImagenResponse retVal = ((Caja.ServiceGenerales.GeneralesSoap)(this)).SubirImagen(inValue);
             return retVal.Body.SubirImagenResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceGenerales.SubirImagenResponse> Caja.ServiceGenerales.ServicioGeneralesSoap.SubirImagenAsync(Caja.ServiceGenerales.SubirImagenRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceGenerales.SubirImagenResponse> Caja.ServiceGenerales.GeneralesSoap.SubirImagenAsync(Caja.ServiceGenerales.SubirImagenRequest request) {
             return base.Channel.SubirImagenAsync(request);
         }
         
@@ -247,11 +247,11 @@ namespace Caja.ServiceGenerales {
             inValue.Body.nombre = nombre;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceGenerales.ServicioGeneralesSoap)(this)).SubirImagenAsync(inValue);
+            return ((Caja.ServiceGenerales.GeneralesSoap)(this)).SubirImagenAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceGenerales.ImagenExisteResponse Caja.ServiceGenerales.ServicioGeneralesSoap.ImagenExiste(Caja.ServiceGenerales.ImagenExisteRequest request) {
+        Caja.ServiceGenerales.ImagenExisteResponse Caja.ServiceGenerales.GeneralesSoap.ImagenExiste(Caja.ServiceGenerales.ImagenExisteRequest request) {
             return base.Channel.ImagenExiste(request);
         }
         
@@ -261,12 +261,12 @@ namespace Caja.ServiceGenerales {
             inValue.Body.nombre = nombre;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceGenerales.ImagenExisteResponse retVal = ((Caja.ServiceGenerales.ServicioGeneralesSoap)(this)).ImagenExiste(inValue);
+            Caja.ServiceGenerales.ImagenExisteResponse retVal = ((Caja.ServiceGenerales.GeneralesSoap)(this)).ImagenExiste(inValue);
             return retVal.Body.ImagenExisteResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceGenerales.ImagenExisteResponse> Caja.ServiceGenerales.ServicioGeneralesSoap.ImagenExisteAsync(Caja.ServiceGenerales.ImagenExisteRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceGenerales.ImagenExisteResponse> Caja.ServiceGenerales.GeneralesSoap.ImagenExisteAsync(Caja.ServiceGenerales.ImagenExisteRequest request) {
             return base.Channel.ImagenExisteAsync(request);
         }
         
@@ -276,7 +276,7 @@ namespace Caja.ServiceGenerales {
             inValue.Body.nombre = nombre;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceGenerales.ServicioGeneralesSoap)(this)).ImagenExisteAsync(inValue);
+            return ((Caja.ServiceGenerales.GeneralesSoap)(this)).ImagenExisteAsync(inValue);
         }
     }
 }

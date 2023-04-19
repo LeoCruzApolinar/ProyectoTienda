@@ -22,6 +22,9 @@ namespace Caja.ServiceMarca {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Caja.ServiceMarca.ExtensionDataObject ExtensionData1Field;
+        
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -40,6 +43,19 @@ namespace Caja.ServiceMarca {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public Caja.ServiceMarca.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
             }
         }
         
@@ -69,7 +85,7 @@ namespace Caja.ServiceMarca {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Descripcion {
             get {
                 return this.DescripcionField;
@@ -82,7 +98,7 @@ namespace Caja.ServiceMarca {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string Logo {
             get {
                 return this.LogoField;
@@ -105,9 +121,38 @@ namespace Caja.ServiceMarca {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExtensionDataObject", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class ExtensionDataObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceMarca.ServicioMarcaSoap")]
-    public interface ServicioMarcaSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceMarca.MarcaSoap")]
+    public interface MarcaSoap {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento marca del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarMarca", ReplyAction="*")]
@@ -439,34 +484,34 @@ namespace Caja.ServiceMarca {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ServicioMarcaSoapChannel : Caja.ServiceMarca.ServicioMarcaSoap, System.ServiceModel.IClientChannel {
+    public interface MarcaSoapChannel : Caja.ServiceMarca.MarcaSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServicioMarcaSoapClient : System.ServiceModel.ClientBase<Caja.ServiceMarca.ServicioMarcaSoap>, Caja.ServiceMarca.ServicioMarcaSoap {
+    public partial class MarcaSoapClient : System.ServiceModel.ClientBase<Caja.ServiceMarca.MarcaSoap>, Caja.ServiceMarca.MarcaSoap {
         
-        public ServicioMarcaSoapClient() {
+        public MarcaSoapClient() {
         }
         
-        public ServicioMarcaSoapClient(string endpointConfigurationName) : 
+        public MarcaSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServicioMarcaSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public MarcaSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioMarcaSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MarcaSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioMarcaSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MarcaSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceMarca.AgregarMarcaResponse Caja.ServiceMarca.ServicioMarcaSoap.AgregarMarca(Caja.ServiceMarca.AgregarMarcaRequest request) {
+        Caja.ServiceMarca.AgregarMarcaResponse Caja.ServiceMarca.MarcaSoap.AgregarMarca(Caja.ServiceMarca.AgregarMarcaRequest request) {
             return base.Channel.AgregarMarca(request);
         }
         
@@ -476,12 +521,12 @@ namespace Caja.ServiceMarca {
             inValue.Body.marca = marca;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceMarca.AgregarMarcaResponse retVal = ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).AgregarMarca(inValue);
+            Caja.ServiceMarca.AgregarMarcaResponse retVal = ((Caja.ServiceMarca.MarcaSoap)(this)).AgregarMarca(inValue);
             return retVal.Body.AgregarMarcaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceMarca.AgregarMarcaResponse> Caja.ServiceMarca.ServicioMarcaSoap.AgregarMarcaAsync(Caja.ServiceMarca.AgregarMarcaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceMarca.AgregarMarcaResponse> Caja.ServiceMarca.MarcaSoap.AgregarMarcaAsync(Caja.ServiceMarca.AgregarMarcaRequest request) {
             return base.Channel.AgregarMarcaAsync(request);
         }
         
@@ -491,11 +536,11 @@ namespace Caja.ServiceMarca {
             inValue.Body.marca = marca;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).AgregarMarcaAsync(inValue);
+            return ((Caja.ServiceMarca.MarcaSoap)(this)).AgregarMarcaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceMarca.ObtenerMarcaResponse Caja.ServiceMarca.ServicioMarcaSoap.ObtenerMarca(Caja.ServiceMarca.ObtenerMarcaRequest request) {
+        Caja.ServiceMarca.ObtenerMarcaResponse Caja.ServiceMarca.MarcaSoap.ObtenerMarca(Caja.ServiceMarca.ObtenerMarcaRequest request) {
             return base.Channel.ObtenerMarca(request);
         }
         
@@ -504,12 +549,12 @@ namespace Caja.ServiceMarca {
             inValue.Body = new Caja.ServiceMarca.ObtenerMarcaRequestBody();
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceMarca.ObtenerMarcaResponse retVal = ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).ObtenerMarca(inValue);
+            Caja.ServiceMarca.ObtenerMarcaResponse retVal = ((Caja.ServiceMarca.MarcaSoap)(this)).ObtenerMarca(inValue);
             return retVal.Body.ObtenerMarcaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceMarca.ObtenerMarcaResponse> Caja.ServiceMarca.ServicioMarcaSoap.ObtenerMarcaAsync(Caja.ServiceMarca.ObtenerMarcaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceMarca.ObtenerMarcaResponse> Caja.ServiceMarca.MarcaSoap.ObtenerMarcaAsync(Caja.ServiceMarca.ObtenerMarcaRequest request) {
             return base.Channel.ObtenerMarcaAsync(request);
         }
         
@@ -518,11 +563,11 @@ namespace Caja.ServiceMarca {
             inValue.Body = new Caja.ServiceMarca.ObtenerMarcaRequestBody();
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).ObtenerMarcaAsync(inValue);
+            return ((Caja.ServiceMarca.MarcaSoap)(this)).ObtenerMarcaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceMarca.ActualizarMarcaResponse Caja.ServiceMarca.ServicioMarcaSoap.ActualizarMarca(Caja.ServiceMarca.ActualizarMarcaRequest request) {
+        Caja.ServiceMarca.ActualizarMarcaResponse Caja.ServiceMarca.MarcaSoap.ActualizarMarca(Caja.ServiceMarca.ActualizarMarcaRequest request) {
             return base.Channel.ActualizarMarca(request);
         }
         
@@ -532,12 +577,12 @@ namespace Caja.ServiceMarca {
             inValue.Body.marca = marca;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceMarca.ActualizarMarcaResponse retVal = ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).ActualizarMarca(inValue);
+            Caja.ServiceMarca.ActualizarMarcaResponse retVal = ((Caja.ServiceMarca.MarcaSoap)(this)).ActualizarMarca(inValue);
             return retVal.Body.ActualizarMarcaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceMarca.ActualizarMarcaResponse> Caja.ServiceMarca.ServicioMarcaSoap.ActualizarMarcaAsync(Caja.ServiceMarca.ActualizarMarcaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceMarca.ActualizarMarcaResponse> Caja.ServiceMarca.MarcaSoap.ActualizarMarcaAsync(Caja.ServiceMarca.ActualizarMarcaRequest request) {
             return base.Channel.ActualizarMarcaAsync(request);
         }
         
@@ -547,11 +592,11 @@ namespace Caja.ServiceMarca {
             inValue.Body.marca = marca;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).ActualizarMarcaAsync(inValue);
+            return ((Caja.ServiceMarca.MarcaSoap)(this)).ActualizarMarcaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceMarca.EliminarMarcaResponse Caja.ServiceMarca.ServicioMarcaSoap.EliminarMarca(Caja.ServiceMarca.EliminarMarcaRequest request) {
+        Caja.ServiceMarca.EliminarMarcaResponse Caja.ServiceMarca.MarcaSoap.EliminarMarca(Caja.ServiceMarca.EliminarMarcaRequest request) {
             return base.Channel.EliminarMarca(request);
         }
         
@@ -561,12 +606,12 @@ namespace Caja.ServiceMarca {
             inValue.Body.Id = Id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceMarca.EliminarMarcaResponse retVal = ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).EliminarMarca(inValue);
+            Caja.ServiceMarca.EliminarMarcaResponse retVal = ((Caja.ServiceMarca.MarcaSoap)(this)).EliminarMarca(inValue);
             return retVal.Body.EliminarMarcaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceMarca.EliminarMarcaResponse> Caja.ServiceMarca.ServicioMarcaSoap.EliminarMarcaAsync(Caja.ServiceMarca.EliminarMarcaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceMarca.EliminarMarcaResponse> Caja.ServiceMarca.MarcaSoap.EliminarMarcaAsync(Caja.ServiceMarca.EliminarMarcaRequest request) {
             return base.Channel.EliminarMarcaAsync(request);
         }
         
@@ -576,7 +621,7 @@ namespace Caja.ServiceMarca {
             inValue.Body.Id = Id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceMarca.ServicioMarcaSoap)(this)).EliminarMarcaAsync(inValue);
+            return ((Caja.ServiceMarca.MarcaSoap)(this)).EliminarMarcaAsync(inValue);
         }
     }
 }

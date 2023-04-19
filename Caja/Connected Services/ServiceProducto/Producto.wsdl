@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CrearProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Producto" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Producto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imágenes" type="tns:ArrayOfImagenes" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="calificacion" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaDeCreacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImagenPrincipal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:complexType name="ArrayOfImagenes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Imagenes" nillable="true" type="tns:Imagenes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Imagenes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDP" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaDeAsignacion" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CrearProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CrearProductoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImagenesProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImagenesProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImagenesProductoResult" type="tns:ArrayOfImagenes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductoExiste">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductoExisteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductoExisteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComandoProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orden" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComandoProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComandoProductosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Producto" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarProductoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarProductoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarImagenP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombreImagen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarImagenPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarImagenPResult" type="tns:TaskOfBoolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TaskOfBoolean">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Task" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Task">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerImagenesProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerImagenesProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerImagenesProductoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarImagenProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imagenes" type="tns:Imagenes" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarImagenProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarImagenProductoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CrearProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearProducto" />
+  </wsdl:message>
+  <wsdl:message name="CrearProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImagenesProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:ImagenesProducto" />
+  </wsdl:message>
+  <wsdl:message name="ImagenesProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ImagenesProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductoExisteSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductoExiste" />
+  </wsdl:message>
+  <wsdl:message name="ProductoExisteSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductoExisteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComandoProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:ComandoProductos" />
+  </wsdl:message>
+  <wsdl:message name="ComandoProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:ComandoProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarProducto" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarProducto" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarImagenPSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarImagenP" />
+  </wsdl:message>
+  <wsdl:message name="EliminarImagenPSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarImagenPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerImagenesProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerImagenesProducto" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerImagenesProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerImagenesProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarImagenProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarImagenProducto" />
+  </wsdl:message>
+  <wsdl:message name="AgregarImagenProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarImagenProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProductoSoap">
+    <wsdl:operation name="CrearProducto">
+      <wsdl:input message="tns:CrearProductoSoapIn" />
+      <wsdl:output message="tns:CrearProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImagenesProducto">
+      <wsdl:input message="tns:ImagenesProductoSoapIn" />
+      <wsdl:output message="tns:ImagenesProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductoExiste">
+      <wsdl:input message="tns:ProductoExisteSoapIn" />
+      <wsdl:output message="tns:ProductoExisteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComandoProductos">
+      <wsdl:input message="tns:ComandoProductosSoapIn" />
+      <wsdl:output message="tns:ComandoProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <wsdl:input message="tns:ActualizarProductoSoapIn" />
+      <wsdl:output message="tns:ActualizarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProducto">
+      <wsdl:input message="tns:EliminarProductoSoapIn" />
+      <wsdl:output message="tns:EliminarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarImagenP">
+      <wsdl:input message="tns:EliminarImagenPSoapIn" />
+      <wsdl:output message="tns:EliminarImagenPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerImagenesProducto">
+      <wsdl:input message="tns:ObtenerImagenesProductoSoapIn" />
+      <wsdl:output message="tns:ObtenerImagenesProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarImagenProducto">
+      <wsdl:input message="tns:AgregarImagenProductoSoapIn" />
+      <wsdl:output message="tns:AgregarImagenProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductoSoap" type="tns:ProductoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearProducto">
+      <soap:operation soapAction="http://tempuri.org/CrearProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImagenesProducto">
+      <soap:operation soapAction="http://tempuri.org/ImagenesProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductoExiste">
+      <soap:operation soapAction="http://tempuri.org/ProductoExiste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComandoProductos">
+      <soap:operation soapAction="http://tempuri.org/ComandoProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <soap:operation soapAction="http://tempuri.org/ActualizarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProducto">
+      <soap:operation soapAction="http://tempuri.org/EliminarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarImagenP">
+      <soap:operation soapAction="http://tempuri.org/EliminarImagenP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerImagenesProducto">
+      <soap:operation soapAction="http://tempuri.org/ObtenerImagenesProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarImagenProducto">
+      <soap:operation soapAction="http://tempuri.org/AgregarImagenProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProductoSoap12" type="tns:ProductoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearProducto">
+      <soap12:operation soapAction="http://tempuri.org/CrearProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImagenesProducto">
+      <soap12:operation soapAction="http://tempuri.org/ImagenesProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductoExiste">
+      <soap12:operation soapAction="http://tempuri.org/ProductoExiste" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComandoProductos">
+      <soap12:operation soapAction="http://tempuri.org/ComandoProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProducto">
+      <soap12:operation soapAction="http://tempuri.org/EliminarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarImagenP">
+      <soap12:operation soapAction="http://tempuri.org/EliminarImagenP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerImagenesProducto">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerImagenesProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarImagenProducto">
+      <soap12:operation soapAction="http://tempuri.org/AgregarImagenProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Producto">
+    <wsdl:port name="ProductoSoap" binding="tns:ProductoSoap">
+      <soap:address location="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Producto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProductoSoap12" binding="tns:ProductoSoap12">
+      <soap12:address location="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Producto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="8fe6d2b1-0130-4582-99f2-64ba2c607d6c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="118bd638-8ea5-436b-8c1c-dcac55151bf2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioGenerales.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Generales.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServicioGenerales.wsdl" MetadataType="Wsdl" ID="3b43cd76-83d3-4431-a906-10151ee73779" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioGenerales.asmx?wsdl" />
-    <MetadataFile FileName="ServicioGenerales.disco" MetadataType="Disco" ID="8dbc0a29-5684-4a8f-be16-53ef6d4d35c0" SourceId="1" SourceUrl="https://serviciowebtienda20230326235427.azurewebsites.net/ServicioGenerales.asmx?disco" />
+    <MetadataFile FileName="Generales.wsdl" MetadataType="Wsdl" ID="d5089216-7a57-4661-9dd2-c4d7f995f225" SourceId="1" SourceUrl="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Generales.asmx?wsdl" />
+    <MetadataFile FileName="Generales.disco" MetadataType="Disco" ID="d2172391-0ca3-4dae-9590-3ccf989dc3c2" SourceId="1" SourceUrl="https://capaintegracion20230413222753.azurewebsites.net/ConexionCaja/Generales.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -21,10 +21,10 @@ namespace Caja
         {
             InitializeComponent();
         }
-        ServiceCategoria.ServicioCategoriaSoapClient servicioCategoria = new ServiceCategoria.ServicioCategoriaSoapClient();
-        ServiceGenerales.ServicioGeneralesSoapClient servicioGenerales = new ServiceGenerales.ServicioGeneralesSoapClient();
-        ServiceMarca.ServicioMarcaSoapClient servicioMarca = new ServiceMarca.ServicioMarcaSoapClient();
-        ServiceProducto.ServicioProductoSoapClient servicioProducto = new ServiceProducto.ServicioProductoSoapClient();
+        ServiceCategoria.CategoriaSoapClient servicioCategoria = new ServiceCategoria.CategoriaSoapClient();
+        ServiceGenerales.GeneralesSoapClient servicioGenerales = new ServiceGenerales.GeneralesSoapClient();
+        ServiceMarca.MarcaSoapClient servicioMarca = new ServiceMarca.MarcaSoapClient();
+        ServiceProducto.ProductoSoapClient servicioProducto = new ServiceProducto.ProductoSoapClient();
         ServiceMarca.Marca servicemarca = new ServiceMarca.Marca();
         List<ServiceMarca.Marca> ListaMarca = new List<ServiceMarca.Marca>(); 
         List<ServiceCategoria.Categoria> ListaCategoria = new List<ServiceCategoria.Categoria>(); 

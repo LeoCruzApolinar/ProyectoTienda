@@ -22,6 +22,9 @@ namespace Caja.ServiceProducto {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Caja.ServiceProducto.ExtensionDataObject ExtensionData1Field;
+        
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -64,6 +67,19 @@ namespace Caja.ServiceProducto {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public Caja.ServiceProducto.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int Id {
             get {
@@ -90,7 +106,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Descripcion {
             get {
                 return this.DescripcionField;
@@ -103,7 +119,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string Categoria {
             get {
                 return this.CategoriaField;
@@ -116,7 +132,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
         public decimal Precio {
             get {
                 return this.PrecioField;
@@ -129,7 +145,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public Caja.ServiceProducto.Imagenes[] Imágenes {
             get {
                 return this.ImágenesField;
@@ -142,7 +158,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public int Stock {
             get {
                 return this.StockField;
@@ -155,7 +171,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public double calificacion {
             get {
                 return this.calificacionField;
@@ -168,7 +184,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public System.DateTime FechaDeCreacion {
             get {
                 return this.FechaDeCreacionField;
@@ -181,7 +197,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
         public System.DateTime FechaUltimaModificacion {
             get {
                 return this.FechaUltimaModificacionField;
@@ -194,7 +210,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public bool Estado {
             get {
                 return this.EstadoField;
@@ -207,7 +223,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
         public string Marca {
             get {
                 return this.MarcaField;
@@ -220,7 +236,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
         public string ImagenPrincipal {
             get {
                 return this.ImagenPrincipalField;
@@ -245,12 +261,44 @@ namespace Caja.ServiceProducto {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExtensionDataObject", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class ExtensionDataObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Imagenes", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class Imagenes : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Caja.ServiceProducto.ExtensionDataObject ExtensionData1Field;
         
         private int IDField;
         
@@ -271,6 +319,19 @@ namespace Caja.ServiceProducto {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public Caja.ServiceProducto.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
             }
         }
         
@@ -326,7 +387,7 @@ namespace Caja.ServiceProducto {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
         public System.DateTime FechaDeAsignacion {
             get {
                 return this.FechaDeAsignacionField;
@@ -359,6 +420,9 @@ namespace Caja.ServiceProducto {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Caja.ServiceProducto.ExtensionDataObject ExtensionData1Field;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -366,6 +430,19 @@ namespace Caja.ServiceProducto {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public Caja.ServiceProducto.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
             }
         }
         
@@ -387,8 +464,8 @@ namespace Caja.ServiceProducto {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceProducto.ServicioProductoSoap")]
-    public interface ServicioProductoSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceProducto.ProductoSoap")]
+    public interface ProductoSoap {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento producto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearProducto", ReplyAction="*")]
@@ -432,12 +509,12 @@ namespace Caja.ServiceProducto {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarProducto", ReplyAction="*")]
         System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarProductoResponse> EliminarProductoAsync(Caja.ServiceProducto.EliminarProductoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento imagenes del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarImagenProducto", ReplyAction="*")]
-        Caja.ServiceProducto.AgregarImagenProductoResponse AgregarImagenProducto(Caja.ServiceProducto.AgregarImagenProductoRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NombreImagen del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarImagenP", ReplyAction="*")]
+        Caja.ServiceProducto.EliminarImagenPResponse EliminarImagenP(Caja.ServiceProducto.EliminarImagenPRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarImagenProducto", ReplyAction="*")]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.AgregarImagenProductoResponse> AgregarImagenProductoAsync(Caja.ServiceProducto.AgregarImagenProductoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarImagenP", ReplyAction="*")]
+        System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarImagenPResponse> EliminarImagenPAsync(Caja.ServiceProducto.EliminarImagenPRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Remitente del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerImagenesProducto", ReplyAction="*")]
@@ -446,12 +523,12 @@ namespace Caja.ServiceProducto {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerImagenesProducto", ReplyAction="*")]
         System.Threading.Tasks.Task<Caja.ServiceProducto.ObtenerImagenesProductoResponse> ObtenerImagenesProductoAsync(Caja.ServiceProducto.ObtenerImagenesProductoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NombreImagen del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarImagenP", ReplyAction="*")]
-        Caja.ServiceProducto.EliminarImagenPResponse EliminarImagenP(Caja.ServiceProducto.EliminarImagenPRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento imagenes del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarImagenProducto", ReplyAction="*")]
+        Caja.ServiceProducto.AgregarImagenProductoResponse AgregarImagenProducto(Caja.ServiceProducto.AgregarImagenProductoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarImagenP", ReplyAction="*")]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarImagenPResponse> EliminarImagenPAsync(Caja.ServiceProducto.EliminarImagenPRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarImagenProducto", ReplyAction="*")]
+        System.Threading.Tasks.Task<Caja.ServiceProducto.AgregarImagenProductoResponse> AgregarImagenProductoAsync(Caja.ServiceProducto.AgregarImagenProductoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -706,7 +783,7 @@ namespace Caja.ServiceProducto {
     public partial class ComandoProductosRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int Orden;
+        public int orden;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string Remitente;
@@ -717,8 +794,8 @@ namespace Caja.ServiceProducto {
         public ComandoProductosRequestBody() {
         }
         
-        public ComandoProductosRequestBody(int Orden, string Remitente, int Origen) {
-            this.Orden = Orden;
+        public ComandoProductosRequestBody(int orden, string Remitente, int Origen) {
+            this.orden = orden;
             this.Remitente = Remitente;
             this.Origen = Origen;
         }
@@ -858,7 +935,7 @@ namespace Caja.ServiceProducto {
     public partial class EliminarProductoRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int Id;
+        public int id;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string Remitente;
@@ -869,8 +946,8 @@ namespace Caja.ServiceProducto {
         public EliminarProductoRequestBody() {
         }
         
-        public EliminarProductoRequestBody(int Id, string Remitente, int Origen) {
-            this.Id = Id;
+        public EliminarProductoRequestBody(int id, string Remitente, int Origen) {
+            this.id = id;
             this.Remitente = Remitente;
             this.Origen = Origen;
         }
@@ -907,158 +984,6 @@ namespace Caja.ServiceProducto {
         
         public EliminarProductoResponseBody(bool EliminarProductoResult) {
             this.EliminarProductoResult = EliminarProductoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AgregarImagenProductoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarImagenProducto", Namespace="http://tempuri.org/", Order=0)]
-        public Caja.ServiceProducto.AgregarImagenProductoRequestBody Body;
-        
-        public AgregarImagenProductoRequest() {
-        }
-        
-        public AgregarImagenProductoRequest(Caja.ServiceProducto.AgregarImagenProductoRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class AgregarImagenProductoRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Caja.ServiceProducto.Imagenes imagenes;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Remitente;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int Origen;
-        
-        public AgregarImagenProductoRequestBody() {
-        }
-        
-        public AgregarImagenProductoRequestBody(Caja.ServiceProducto.Imagenes imagenes, string Remitente, int Origen) {
-            this.imagenes = imagenes;
-            this.Remitente = Remitente;
-            this.Origen = Origen;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AgregarImagenProductoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarImagenProductoResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Caja.ServiceProducto.AgregarImagenProductoResponseBody Body;
-        
-        public AgregarImagenProductoResponse() {
-        }
-        
-        public AgregarImagenProductoResponse(Caja.ServiceProducto.AgregarImagenProductoResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class AgregarImagenProductoResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool AgregarImagenProductoResult;
-        
-        public AgregarImagenProductoResponseBody() {
-        }
-        
-        public AgregarImagenProductoResponseBody(bool AgregarImagenProductoResult) {
-            this.AgregarImagenProductoResult = AgregarImagenProductoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ObtenerImagenesProductoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerImagenesProducto", Namespace="http://tempuri.org/", Order=0)]
-        public Caja.ServiceProducto.ObtenerImagenesProductoRequestBody Body;
-        
-        public ObtenerImagenesProductoRequest() {
-        }
-        
-        public ObtenerImagenesProductoRequest(Caja.ServiceProducto.ObtenerImagenesProductoRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ObtenerImagenesProductoRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int ID;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Remitente;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int Origen;
-        
-        public ObtenerImagenesProductoRequestBody() {
-        }
-        
-        public ObtenerImagenesProductoRequestBody(int ID, string Remitente, int Origen) {
-            this.ID = ID;
-            this.Remitente = Remitente;
-            this.Origen = Origen;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ObtenerImagenesProductoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerImagenesProductoResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Caja.ServiceProducto.ObtenerImagenesProductoResponseBody Body;
-        
-        public ObtenerImagenesProductoResponse() {
-        }
-        
-        public ObtenerImagenesProductoResponse(Caja.ServiceProducto.ObtenerImagenesProductoResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ObtenerImagenesProductoResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string ObtenerImagenesProductoResult;
-        
-        public ObtenerImagenesProductoResponseBody() {
-        }
-        
-        public ObtenerImagenesProductoResponseBody(string ObtenerImagenesProductoResult) {
-            this.ObtenerImagenesProductoResult = ObtenerImagenesProductoResult;
         }
     }
     
@@ -1138,35 +1063,187 @@ namespace Caja.ServiceProducto {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ServicioProductoSoapChannel : Caja.ServiceProducto.ServicioProductoSoap, System.ServiceModel.IClientChannel {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerImagenesProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerImagenesProducto", Namespace="http://tempuri.org/", Order=0)]
+        public Caja.ServiceProducto.ObtenerImagenesProductoRequestBody Body;
+        
+        public ObtenerImagenesProductoRequest() {
+        }
+        
+        public ObtenerImagenesProductoRequest(Caja.ServiceProducto.ObtenerImagenesProductoRequestBody Body) {
+            this.Body = Body;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServicioProductoSoapClient : System.ServiceModel.ClientBase<Caja.ServiceProducto.ServicioProductoSoap>, Caja.ServiceProducto.ServicioProductoSoap {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerImagenesProductoRequestBody {
         
-        public ServicioProductoSoapClient() {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Remitente;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int Origen;
+        
+        public ObtenerImagenesProductoRequestBody() {
         }
         
-        public ServicioProductoSoapClient(string endpointConfigurationName) : 
+        public ObtenerImagenesProductoRequestBody(int id, string Remitente, int Origen) {
+            this.id = id;
+            this.Remitente = Remitente;
+            this.Origen = Origen;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerImagenesProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerImagenesProductoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Caja.ServiceProducto.ObtenerImagenesProductoResponseBody Body;
+        
+        public ObtenerImagenesProductoResponse() {
+        }
+        
+        public ObtenerImagenesProductoResponse(Caja.ServiceProducto.ObtenerImagenesProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerImagenesProductoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ObtenerImagenesProductoResult;
+        
+        public ObtenerImagenesProductoResponseBody() {
+        }
+        
+        public ObtenerImagenesProductoResponseBody(string ObtenerImagenesProductoResult) {
+            this.ObtenerImagenesProductoResult = ObtenerImagenesProductoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarImagenProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarImagenProducto", Namespace="http://tempuri.org/", Order=0)]
+        public Caja.ServiceProducto.AgregarImagenProductoRequestBody Body;
+        
+        public AgregarImagenProductoRequest() {
+        }
+        
+        public AgregarImagenProductoRequest(Caja.ServiceProducto.AgregarImagenProductoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AgregarImagenProductoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Caja.ServiceProducto.Imagenes imagenes;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Remitente;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int Origen;
+        
+        public AgregarImagenProductoRequestBody() {
+        }
+        
+        public AgregarImagenProductoRequestBody(Caja.ServiceProducto.Imagenes imagenes, string Remitente, int Origen) {
+            this.imagenes = imagenes;
+            this.Remitente = Remitente;
+            this.Origen = Origen;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AgregarImagenProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarImagenProductoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Caja.ServiceProducto.AgregarImagenProductoResponseBody Body;
+        
+        public AgregarImagenProductoResponse() {
+        }
+        
+        public AgregarImagenProductoResponse(Caja.ServiceProducto.AgregarImagenProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AgregarImagenProductoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AgregarImagenProductoResult;
+        
+        public AgregarImagenProductoResponseBody() {
+        }
+        
+        public AgregarImagenProductoResponseBody(bool AgregarImagenProductoResult) {
+            this.AgregarImagenProductoResult = AgregarImagenProductoResult;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ProductoSoapChannel : Caja.ServiceProducto.ProductoSoap, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProductoSoapClient : System.ServiceModel.ClientBase<Caja.ServiceProducto.ProductoSoap>, Caja.ServiceProducto.ProductoSoap {
+        
+        public ProductoSoapClient() {
+        }
+        
+        public ProductoSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServicioProductoSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public ProductoSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioProductoSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProductoSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioProductoSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProductoSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.CrearProductoResponse Caja.ServiceProducto.ServicioProductoSoap.CrearProducto(Caja.ServiceProducto.CrearProductoRequest request) {
+        Caja.ServiceProducto.CrearProductoResponse Caja.ServiceProducto.ProductoSoap.CrearProducto(Caja.ServiceProducto.CrearProductoRequest request) {
             return base.Channel.CrearProducto(request);
         }
         
@@ -1176,12 +1253,12 @@ namespace Caja.ServiceProducto {
             inValue.Body.producto = producto;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.CrearProductoResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).CrearProducto(inValue);
+            Caja.ServiceProducto.CrearProductoResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).CrearProducto(inValue);
             return retVal.Body.CrearProductoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.CrearProductoResponse> Caja.ServiceProducto.ServicioProductoSoap.CrearProductoAsync(Caja.ServiceProducto.CrearProductoRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceProducto.CrearProductoResponse> Caja.ServiceProducto.ProductoSoap.CrearProductoAsync(Caja.ServiceProducto.CrearProductoRequest request) {
             return base.Channel.CrearProductoAsync(request);
         }
         
@@ -1191,11 +1268,11 @@ namespace Caja.ServiceProducto {
             inValue.Body.producto = producto;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).CrearProductoAsync(inValue);
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).CrearProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.ImagenesProductoResponse Caja.ServiceProducto.ServicioProductoSoap.ImagenesProducto(Caja.ServiceProducto.ImagenesProductoRequest request) {
+        Caja.ServiceProducto.ImagenesProductoResponse Caja.ServiceProducto.ProductoSoap.ImagenesProducto(Caja.ServiceProducto.ImagenesProductoRequest request) {
             return base.Channel.ImagenesProducto(request);
         }
         
@@ -1205,12 +1282,12 @@ namespace Caja.ServiceProducto {
             inValue.Body.id = id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.ImagenesProductoResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ImagenesProducto(inValue);
+            Caja.ServiceProducto.ImagenesProductoResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).ImagenesProducto(inValue);
             return retVal.Body.ImagenesProductoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.ImagenesProductoResponse> Caja.ServiceProducto.ServicioProductoSoap.ImagenesProductoAsync(Caja.ServiceProducto.ImagenesProductoRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceProducto.ImagenesProductoResponse> Caja.ServiceProducto.ProductoSoap.ImagenesProductoAsync(Caja.ServiceProducto.ImagenesProductoRequest request) {
             return base.Channel.ImagenesProductoAsync(request);
         }
         
@@ -1220,11 +1297,11 @@ namespace Caja.ServiceProducto {
             inValue.Body.id = id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ImagenesProductoAsync(inValue);
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).ImagenesProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.ProductoExisteResponse Caja.ServiceProducto.ServicioProductoSoap.ProductoExiste(Caja.ServiceProducto.ProductoExisteRequest request) {
+        Caja.ServiceProducto.ProductoExisteResponse Caja.ServiceProducto.ProductoSoap.ProductoExiste(Caja.ServiceProducto.ProductoExisteRequest request) {
             return base.Channel.ProductoExiste(request);
         }
         
@@ -1234,12 +1311,12 @@ namespace Caja.ServiceProducto {
             inValue.Body.nombre = nombre;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.ProductoExisteResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ProductoExiste(inValue);
+            Caja.ServiceProducto.ProductoExisteResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).ProductoExiste(inValue);
             return retVal.Body.ProductoExisteResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.ProductoExisteResponse> Caja.ServiceProducto.ServicioProductoSoap.ProductoExisteAsync(Caja.ServiceProducto.ProductoExisteRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceProducto.ProductoExisteResponse> Caja.ServiceProducto.ProductoSoap.ProductoExisteAsync(Caja.ServiceProducto.ProductoExisteRequest request) {
             return base.Channel.ProductoExisteAsync(request);
         }
         
@@ -1249,40 +1326,40 @@ namespace Caja.ServiceProducto {
             inValue.Body.nombre = nombre;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ProductoExisteAsync(inValue);
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).ProductoExisteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.ComandoProductosResponse Caja.ServiceProducto.ServicioProductoSoap.ComandoProductos(Caja.ServiceProducto.ComandoProductosRequest request) {
+        Caja.ServiceProducto.ComandoProductosResponse Caja.ServiceProducto.ProductoSoap.ComandoProductos(Caja.ServiceProducto.ComandoProductosRequest request) {
             return base.Channel.ComandoProductos(request);
         }
         
-        public string ComandoProductos(int Orden, string Remitente, int Origen) {
+        public string ComandoProductos(int orden, string Remitente, int Origen) {
             Caja.ServiceProducto.ComandoProductosRequest inValue = new Caja.ServiceProducto.ComandoProductosRequest();
             inValue.Body = new Caja.ServiceProducto.ComandoProductosRequestBody();
-            inValue.Body.Orden = Orden;
+            inValue.Body.orden = orden;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.ComandoProductosResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ComandoProductos(inValue);
+            Caja.ServiceProducto.ComandoProductosResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).ComandoProductos(inValue);
             return retVal.Body.ComandoProductosResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.ComandoProductosResponse> Caja.ServiceProducto.ServicioProductoSoap.ComandoProductosAsync(Caja.ServiceProducto.ComandoProductosRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceProducto.ComandoProductosResponse> Caja.ServiceProducto.ProductoSoap.ComandoProductosAsync(Caja.ServiceProducto.ComandoProductosRequest request) {
             return base.Channel.ComandoProductosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Caja.ServiceProducto.ComandoProductosResponse> ComandoProductosAsync(int Orden, string Remitente, int Origen) {
+        public System.Threading.Tasks.Task<Caja.ServiceProducto.ComandoProductosResponse> ComandoProductosAsync(int orden, string Remitente, int Origen) {
             Caja.ServiceProducto.ComandoProductosRequest inValue = new Caja.ServiceProducto.ComandoProductosRequest();
             inValue.Body = new Caja.ServiceProducto.ComandoProductosRequestBody();
-            inValue.Body.Orden = Orden;
+            inValue.Body.orden = orden;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ComandoProductosAsync(inValue);
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).ComandoProductosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.ActualizarProductoResponse Caja.ServiceProducto.ServicioProductoSoap.ActualizarProducto(Caja.ServiceProducto.ActualizarProductoRequest request) {
+        Caja.ServiceProducto.ActualizarProductoResponse Caja.ServiceProducto.ProductoSoap.ActualizarProducto(Caja.ServiceProducto.ActualizarProductoRequest request) {
             return base.Channel.ActualizarProducto(request);
         }
         
@@ -1292,12 +1369,12 @@ namespace Caja.ServiceProducto {
             inValue.Body.producto = producto;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.ActualizarProductoResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ActualizarProducto(inValue);
+            Caja.ServiceProducto.ActualizarProductoResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).ActualizarProducto(inValue);
             return retVal.Body.ActualizarProductoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.ActualizarProductoResponse> Caja.ServiceProducto.ServicioProductoSoap.ActualizarProductoAsync(Caja.ServiceProducto.ActualizarProductoRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceProducto.ActualizarProductoResponse> Caja.ServiceProducto.ProductoSoap.ActualizarProductoAsync(Caja.ServiceProducto.ActualizarProductoRequest request) {
             return base.Channel.ActualizarProductoAsync(request);
         }
         
@@ -1307,98 +1384,40 @@ namespace Caja.ServiceProducto {
             inValue.Body.producto = producto;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ActualizarProductoAsync(inValue);
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).ActualizarProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.EliminarProductoResponse Caja.ServiceProducto.ServicioProductoSoap.EliminarProducto(Caja.ServiceProducto.EliminarProductoRequest request) {
+        Caja.ServiceProducto.EliminarProductoResponse Caja.ServiceProducto.ProductoSoap.EliminarProducto(Caja.ServiceProducto.EliminarProductoRequest request) {
             return base.Channel.EliminarProducto(request);
         }
         
-        public bool EliminarProducto(int Id, string Remitente, int Origen) {
+        public bool EliminarProducto(int id, string Remitente, int Origen) {
             Caja.ServiceProducto.EliminarProductoRequest inValue = new Caja.ServiceProducto.EliminarProductoRequest();
             inValue.Body = new Caja.ServiceProducto.EliminarProductoRequestBody();
-            inValue.Body.Id = Id;
+            inValue.Body.id = id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.EliminarProductoResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).EliminarProducto(inValue);
+            Caja.ServiceProducto.EliminarProductoResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).EliminarProducto(inValue);
             return retVal.Body.EliminarProductoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarProductoResponse> Caja.ServiceProducto.ServicioProductoSoap.EliminarProductoAsync(Caja.ServiceProducto.EliminarProductoRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarProductoResponse> Caja.ServiceProducto.ProductoSoap.EliminarProductoAsync(Caja.ServiceProducto.EliminarProductoRequest request) {
             return base.Channel.EliminarProductoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarProductoResponse> EliminarProductoAsync(int Id, string Remitente, int Origen) {
+        public System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarProductoResponse> EliminarProductoAsync(int id, string Remitente, int Origen) {
             Caja.ServiceProducto.EliminarProductoRequest inValue = new Caja.ServiceProducto.EliminarProductoRequest();
             inValue.Body = new Caja.ServiceProducto.EliminarProductoRequestBody();
-            inValue.Body.Id = Id;
+            inValue.Body.id = id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).EliminarProductoAsync(inValue);
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).EliminarProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.AgregarImagenProductoResponse Caja.ServiceProducto.ServicioProductoSoap.AgregarImagenProducto(Caja.ServiceProducto.AgregarImagenProductoRequest request) {
-            return base.Channel.AgregarImagenProducto(request);
-        }
-        
-        public bool AgregarImagenProducto(Caja.ServiceProducto.Imagenes imagenes, string Remitente, int Origen) {
-            Caja.ServiceProducto.AgregarImagenProductoRequest inValue = new Caja.ServiceProducto.AgregarImagenProductoRequest();
-            inValue.Body = new Caja.ServiceProducto.AgregarImagenProductoRequestBody();
-            inValue.Body.imagenes = imagenes;
-            inValue.Body.Remitente = Remitente;
-            inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.AgregarImagenProductoResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).AgregarImagenProducto(inValue);
-            return retVal.Body.AgregarImagenProductoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.AgregarImagenProductoResponse> Caja.ServiceProducto.ServicioProductoSoap.AgregarImagenProductoAsync(Caja.ServiceProducto.AgregarImagenProductoRequest request) {
-            return base.Channel.AgregarImagenProductoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Caja.ServiceProducto.AgregarImagenProductoResponse> AgregarImagenProductoAsync(Caja.ServiceProducto.Imagenes imagenes, string Remitente, int Origen) {
-            Caja.ServiceProducto.AgregarImagenProductoRequest inValue = new Caja.ServiceProducto.AgregarImagenProductoRequest();
-            inValue.Body = new Caja.ServiceProducto.AgregarImagenProductoRequestBody();
-            inValue.Body.imagenes = imagenes;
-            inValue.Body.Remitente = Remitente;
-            inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).AgregarImagenProductoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.ObtenerImagenesProductoResponse Caja.ServiceProducto.ServicioProductoSoap.ObtenerImagenesProducto(Caja.ServiceProducto.ObtenerImagenesProductoRequest request) {
-            return base.Channel.ObtenerImagenesProducto(request);
-        }
-        
-        public string ObtenerImagenesProducto(int ID, string Remitente, int Origen) {
-            Caja.ServiceProducto.ObtenerImagenesProductoRequest inValue = new Caja.ServiceProducto.ObtenerImagenesProductoRequest();
-            inValue.Body = new Caja.ServiceProducto.ObtenerImagenesProductoRequestBody();
-            inValue.Body.ID = ID;
-            inValue.Body.Remitente = Remitente;
-            inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.ObtenerImagenesProductoResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ObtenerImagenesProducto(inValue);
-            return retVal.Body.ObtenerImagenesProductoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.ObtenerImagenesProductoResponse> Caja.ServiceProducto.ServicioProductoSoap.ObtenerImagenesProductoAsync(Caja.ServiceProducto.ObtenerImagenesProductoRequest request) {
-            return base.Channel.ObtenerImagenesProductoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Caja.ServiceProducto.ObtenerImagenesProductoResponse> ObtenerImagenesProductoAsync(int ID, string Remitente, int Origen) {
-            Caja.ServiceProducto.ObtenerImagenesProductoRequest inValue = new Caja.ServiceProducto.ObtenerImagenesProductoRequest();
-            inValue.Body = new Caja.ServiceProducto.ObtenerImagenesProductoRequestBody();
-            inValue.Body.ID = ID;
-            inValue.Body.Remitente = Remitente;
-            inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).ObtenerImagenesProductoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceProducto.EliminarImagenPResponse Caja.ServiceProducto.ServicioProductoSoap.EliminarImagenP(Caja.ServiceProducto.EliminarImagenPRequest request) {
+        Caja.ServiceProducto.EliminarImagenPResponse Caja.ServiceProducto.ProductoSoap.EliminarImagenP(Caja.ServiceProducto.EliminarImagenPRequest request) {
             return base.Channel.EliminarImagenP(request);
         }
         
@@ -1408,12 +1427,12 @@ namespace Caja.ServiceProducto {
             inValue.Body.NombreImagen = NombreImagen;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceProducto.EliminarImagenPResponse retVal = ((Caja.ServiceProducto.ServicioProductoSoap)(this)).EliminarImagenP(inValue);
+            Caja.ServiceProducto.EliminarImagenPResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).EliminarImagenP(inValue);
             return retVal.Body.EliminarImagenPResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarImagenPResponse> Caja.ServiceProducto.ServicioProductoSoap.EliminarImagenPAsync(Caja.ServiceProducto.EliminarImagenPRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceProducto.EliminarImagenPResponse> Caja.ServiceProducto.ProductoSoap.EliminarImagenPAsync(Caja.ServiceProducto.EliminarImagenPRequest request) {
             return base.Channel.EliminarImagenPAsync(request);
         }
         
@@ -1423,7 +1442,65 @@ namespace Caja.ServiceProducto {
             inValue.Body.NombreImagen = NombreImagen;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceProducto.ServicioProductoSoap)(this)).EliminarImagenPAsync(inValue);
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).EliminarImagenPAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Caja.ServiceProducto.ObtenerImagenesProductoResponse Caja.ServiceProducto.ProductoSoap.ObtenerImagenesProducto(Caja.ServiceProducto.ObtenerImagenesProductoRequest request) {
+            return base.Channel.ObtenerImagenesProducto(request);
+        }
+        
+        public string ObtenerImagenesProducto(int id, string Remitente, int Origen) {
+            Caja.ServiceProducto.ObtenerImagenesProductoRequest inValue = new Caja.ServiceProducto.ObtenerImagenesProductoRequest();
+            inValue.Body = new Caja.ServiceProducto.ObtenerImagenesProductoRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.Remitente = Remitente;
+            inValue.Body.Origen = Origen;
+            Caja.ServiceProducto.ObtenerImagenesProductoResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).ObtenerImagenesProducto(inValue);
+            return retVal.Body.ObtenerImagenesProductoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Caja.ServiceProducto.ObtenerImagenesProductoResponse> Caja.ServiceProducto.ProductoSoap.ObtenerImagenesProductoAsync(Caja.ServiceProducto.ObtenerImagenesProductoRequest request) {
+            return base.Channel.ObtenerImagenesProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Caja.ServiceProducto.ObtenerImagenesProductoResponse> ObtenerImagenesProductoAsync(int id, string Remitente, int Origen) {
+            Caja.ServiceProducto.ObtenerImagenesProductoRequest inValue = new Caja.ServiceProducto.ObtenerImagenesProductoRequest();
+            inValue.Body = new Caja.ServiceProducto.ObtenerImagenesProductoRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.Remitente = Remitente;
+            inValue.Body.Origen = Origen;
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).ObtenerImagenesProductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Caja.ServiceProducto.AgregarImagenProductoResponse Caja.ServiceProducto.ProductoSoap.AgregarImagenProducto(Caja.ServiceProducto.AgregarImagenProductoRequest request) {
+            return base.Channel.AgregarImagenProducto(request);
+        }
+        
+        public bool AgregarImagenProducto(Caja.ServiceProducto.Imagenes imagenes, string Remitente, int Origen) {
+            Caja.ServiceProducto.AgregarImagenProductoRequest inValue = new Caja.ServiceProducto.AgregarImagenProductoRequest();
+            inValue.Body = new Caja.ServiceProducto.AgregarImagenProductoRequestBody();
+            inValue.Body.imagenes = imagenes;
+            inValue.Body.Remitente = Remitente;
+            inValue.Body.Origen = Origen;
+            Caja.ServiceProducto.AgregarImagenProductoResponse retVal = ((Caja.ServiceProducto.ProductoSoap)(this)).AgregarImagenProducto(inValue);
+            return retVal.Body.AgregarImagenProductoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Caja.ServiceProducto.AgregarImagenProductoResponse> Caja.ServiceProducto.ProductoSoap.AgregarImagenProductoAsync(Caja.ServiceProducto.AgregarImagenProductoRequest request) {
+            return base.Channel.AgregarImagenProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Caja.ServiceProducto.AgregarImagenProductoResponse> AgregarImagenProductoAsync(Caja.ServiceProducto.Imagenes imagenes, string Remitente, int Origen) {
+            Caja.ServiceProducto.AgregarImagenProductoRequest inValue = new Caja.ServiceProducto.AgregarImagenProductoRequest();
+            inValue.Body = new Caja.ServiceProducto.AgregarImagenProductoRequestBody();
+            inValue.Body.imagenes = imagenes;
+            inValue.Body.Remitente = Remitente;
+            inValue.Body.Origen = Origen;
+            return ((Caja.ServiceProducto.ProductoSoap)(this)).AgregarImagenProductoAsync(inValue);
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Firebase.Storage;
 using FireSharp.Response;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -118,6 +120,48 @@ namespace ServicioWebTienda
                 return null;
             }
         }
+        [WebMethod]
+        public List<Dictionary<string, object>> Cloner(string GUID, string tableName)
+        {
+            List<Dictionary<string, object>> results = new List<Dictionary<string, object>>();
+            try
+            {
+                conexionBD.OpenConnection();
+                conexionBD.client = new FireSharp.FirebaseClient(conexionBD.Conexion);
+                FirebaseResponse Guid = conexionBD.client.Get("/API/ID");
+                string GS = JsonConvert.DeserializeObject<string>(Guid.Body);
+                if (GUID == GS)
+                {
+                    string query = "SELECT * FROM " + tableName;
+                    SqlCommand command = new SqlCommand(query, conexionBD.connection);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Dictionary<string, object> row = new Dictionary<string, object>();
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            row.Add(reader.GetName(i), reader.GetValue(i));
+                        }
+                        results.Add(row);
+                    }
+
+                    reader.Close();
+                    conexionBD.CloseConnection();
+                }
+                else
+                {
+                    throw new Exception("GUID inválido");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción adecuadamente (por ejemplo, loguearla)
+                throw ex;
+            }
+            return results;
+        }
+
         [WebMethod]
         public bool ImagenExiste(string nombre, string Remitente = "Anonimo", int Origen = 1)
         {

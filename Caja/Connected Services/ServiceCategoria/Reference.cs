@@ -22,6 +22,9 @@ namespace Caja.ServiceCategoria {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Caja.ServiceCategoria.ExtensionDataObject ExtensionData1Field;
+        
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -37,6 +40,19 @@ namespace Caja.ServiceCategoria {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public Caja.ServiceCategoria.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
             }
         }
         
@@ -66,7 +82,7 @@ namespace Caja.ServiceCategoria {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Descripcion {
             get {
                 return this.DescripcionField;
@@ -89,9 +105,38 @@ namespace Caja.ServiceCategoria {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExtensionDataObject", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class ExtensionDataObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceCategoria.ServicioCategoriaSoap")]
-    public interface ServicioCategoriaSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceCategoria.CategoriaSoap")]
+    public interface CategoriaSoap {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento categoria del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AgregarCategoria", ReplyAction="*")]
@@ -370,7 +415,7 @@ namespace Caja.ServiceCategoria {
     public partial class EliminarCategoriaRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int Id;
+        public int id;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string Remitente;
@@ -381,8 +426,8 @@ namespace Caja.ServiceCategoria {
         public EliminarCategoriaRequestBody() {
         }
         
-        public EliminarCategoriaRequestBody(int Id, string Remitente, int Origen) {
-            this.Id = Id;
+        public EliminarCategoriaRequestBody(int id, string Remitente, int Origen) {
+            this.id = id;
             this.Remitente = Remitente;
             this.Origen = Origen;
         }
@@ -423,34 +468,34 @@ namespace Caja.ServiceCategoria {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ServicioCategoriaSoapChannel : Caja.ServiceCategoria.ServicioCategoriaSoap, System.ServiceModel.IClientChannel {
+    public interface CategoriaSoapChannel : Caja.ServiceCategoria.CategoriaSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServicioCategoriaSoapClient : System.ServiceModel.ClientBase<Caja.ServiceCategoria.ServicioCategoriaSoap>, Caja.ServiceCategoria.ServicioCategoriaSoap {
+    public partial class CategoriaSoapClient : System.ServiceModel.ClientBase<Caja.ServiceCategoria.CategoriaSoap>, Caja.ServiceCategoria.CategoriaSoap {
         
-        public ServicioCategoriaSoapClient() {
+        public CategoriaSoapClient() {
         }
         
-        public ServicioCategoriaSoapClient(string endpointConfigurationName) : 
+        public CategoriaSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServicioCategoriaSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public CategoriaSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioCategoriaSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CategoriaSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServicioCategoriaSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CategoriaSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceCategoria.AgregarCategoriaResponse Caja.ServiceCategoria.ServicioCategoriaSoap.AgregarCategoria(Caja.ServiceCategoria.AgregarCategoriaRequest request) {
+        Caja.ServiceCategoria.AgregarCategoriaResponse Caja.ServiceCategoria.CategoriaSoap.AgregarCategoria(Caja.ServiceCategoria.AgregarCategoriaRequest request) {
             return base.Channel.AgregarCategoria(request);
         }
         
@@ -460,12 +505,12 @@ namespace Caja.ServiceCategoria {
             inValue.Body.categoria = categoria;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceCategoria.AgregarCategoriaResponse retVal = ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).AgregarCategoria(inValue);
+            Caja.ServiceCategoria.AgregarCategoriaResponse retVal = ((Caja.ServiceCategoria.CategoriaSoap)(this)).AgregarCategoria(inValue);
             return retVal.Body.AgregarCategoriaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceCategoria.AgregarCategoriaResponse> Caja.ServiceCategoria.ServicioCategoriaSoap.AgregarCategoriaAsync(Caja.ServiceCategoria.AgregarCategoriaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceCategoria.AgregarCategoriaResponse> Caja.ServiceCategoria.CategoriaSoap.AgregarCategoriaAsync(Caja.ServiceCategoria.AgregarCategoriaRequest request) {
             return base.Channel.AgregarCategoriaAsync(request);
         }
         
@@ -475,11 +520,11 @@ namespace Caja.ServiceCategoria {
             inValue.Body.categoria = categoria;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).AgregarCategoriaAsync(inValue);
+            return ((Caja.ServiceCategoria.CategoriaSoap)(this)).AgregarCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceCategoria.ObtenerCategoriaResponse Caja.ServiceCategoria.ServicioCategoriaSoap.ObtenerCategoria(Caja.ServiceCategoria.ObtenerCategoriaRequest request) {
+        Caja.ServiceCategoria.ObtenerCategoriaResponse Caja.ServiceCategoria.CategoriaSoap.ObtenerCategoria(Caja.ServiceCategoria.ObtenerCategoriaRequest request) {
             return base.Channel.ObtenerCategoria(request);
         }
         
@@ -488,12 +533,12 @@ namespace Caja.ServiceCategoria {
             inValue.Body = new Caja.ServiceCategoria.ObtenerCategoriaRequestBody();
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceCategoria.ObtenerCategoriaResponse retVal = ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).ObtenerCategoria(inValue);
+            Caja.ServiceCategoria.ObtenerCategoriaResponse retVal = ((Caja.ServiceCategoria.CategoriaSoap)(this)).ObtenerCategoria(inValue);
             return retVal.Body.ObtenerCategoriaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceCategoria.ObtenerCategoriaResponse> Caja.ServiceCategoria.ServicioCategoriaSoap.ObtenerCategoriaAsync(Caja.ServiceCategoria.ObtenerCategoriaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceCategoria.ObtenerCategoriaResponse> Caja.ServiceCategoria.CategoriaSoap.ObtenerCategoriaAsync(Caja.ServiceCategoria.ObtenerCategoriaRequest request) {
             return base.Channel.ObtenerCategoriaAsync(request);
         }
         
@@ -502,11 +547,11 @@ namespace Caja.ServiceCategoria {
             inValue.Body = new Caja.ServiceCategoria.ObtenerCategoriaRequestBody();
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).ObtenerCategoriaAsync(inValue);
+            return ((Caja.ServiceCategoria.CategoriaSoap)(this)).ObtenerCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceCategoria.ActualizarCategoriaResponse Caja.ServiceCategoria.ServicioCategoriaSoap.ActualizarCategoria(Caja.ServiceCategoria.ActualizarCategoriaRequest request) {
+        Caja.ServiceCategoria.ActualizarCategoriaResponse Caja.ServiceCategoria.CategoriaSoap.ActualizarCategoria(Caja.ServiceCategoria.ActualizarCategoriaRequest request) {
             return base.Channel.ActualizarCategoria(request);
         }
         
@@ -516,12 +561,12 @@ namespace Caja.ServiceCategoria {
             inValue.Body.categoria = categoria;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceCategoria.ActualizarCategoriaResponse retVal = ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).ActualizarCategoria(inValue);
+            Caja.ServiceCategoria.ActualizarCategoriaResponse retVal = ((Caja.ServiceCategoria.CategoriaSoap)(this)).ActualizarCategoria(inValue);
             return retVal.Body.ActualizarCategoriaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceCategoria.ActualizarCategoriaResponse> Caja.ServiceCategoria.ServicioCategoriaSoap.ActualizarCategoriaAsync(Caja.ServiceCategoria.ActualizarCategoriaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceCategoria.ActualizarCategoriaResponse> Caja.ServiceCategoria.CategoriaSoap.ActualizarCategoriaAsync(Caja.ServiceCategoria.ActualizarCategoriaRequest request) {
             return base.Channel.ActualizarCategoriaAsync(request);
         }
         
@@ -531,36 +576,36 @@ namespace Caja.ServiceCategoria {
             inValue.Body.categoria = categoria;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).ActualizarCategoriaAsync(inValue);
+            return ((Caja.ServiceCategoria.CategoriaSoap)(this)).ActualizarCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Caja.ServiceCategoria.EliminarCategoriaResponse Caja.ServiceCategoria.ServicioCategoriaSoap.EliminarCategoria(Caja.ServiceCategoria.EliminarCategoriaRequest request) {
+        Caja.ServiceCategoria.EliminarCategoriaResponse Caja.ServiceCategoria.CategoriaSoap.EliminarCategoria(Caja.ServiceCategoria.EliminarCategoriaRequest request) {
             return base.Channel.EliminarCategoria(request);
         }
         
-        public bool EliminarCategoria(int Id, string Remitente, int Origen) {
+        public bool EliminarCategoria(int id, string Remitente, int Origen) {
             Caja.ServiceCategoria.EliminarCategoriaRequest inValue = new Caja.ServiceCategoria.EliminarCategoriaRequest();
             inValue.Body = new Caja.ServiceCategoria.EliminarCategoriaRequestBody();
-            inValue.Body.Id = Id;
+            inValue.Body.id = id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            Caja.ServiceCategoria.EliminarCategoriaResponse retVal = ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).EliminarCategoria(inValue);
+            Caja.ServiceCategoria.EliminarCategoriaResponse retVal = ((Caja.ServiceCategoria.CategoriaSoap)(this)).EliminarCategoria(inValue);
             return retVal.Body.EliminarCategoriaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Caja.ServiceCategoria.EliminarCategoriaResponse> Caja.ServiceCategoria.ServicioCategoriaSoap.EliminarCategoriaAsync(Caja.ServiceCategoria.EliminarCategoriaRequest request) {
+        System.Threading.Tasks.Task<Caja.ServiceCategoria.EliminarCategoriaResponse> Caja.ServiceCategoria.CategoriaSoap.EliminarCategoriaAsync(Caja.ServiceCategoria.EliminarCategoriaRequest request) {
             return base.Channel.EliminarCategoriaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Caja.ServiceCategoria.EliminarCategoriaResponse> EliminarCategoriaAsync(int Id, string Remitente, int Origen) {
+        public System.Threading.Tasks.Task<Caja.ServiceCategoria.EliminarCategoriaResponse> EliminarCategoriaAsync(int id, string Remitente, int Origen) {
             Caja.ServiceCategoria.EliminarCategoriaRequest inValue = new Caja.ServiceCategoria.EliminarCategoriaRequest();
             inValue.Body = new Caja.ServiceCategoria.EliminarCategoriaRequestBody();
-            inValue.Body.Id = Id;
+            inValue.Body.id = id;
             inValue.Body.Remitente = Remitente;
             inValue.Body.Origen = Origen;
-            return ((Caja.ServiceCategoria.ServicioCategoriaSoap)(this)).EliminarCategoriaAsync(inValue);
+            return ((Caja.ServiceCategoria.CategoriaSoap)(this)).EliminarCategoriaAsync(inValue);
         }
     }
 }
